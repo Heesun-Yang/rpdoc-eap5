@@ -1,0 +1,5 @@
+#============================
+# Report
+#============================
+## Display null value in report
+display_null_value=no

@@ -1,0 +1,132 @@
+{
+  "instance_default_values" : {
+    "log_home" : "",
+    "domain_ip" : "",
+    "port_offset" : "0",
+    "jmx_console_port" : "1099",
+    "jmx_console_id" : "admin",
+    "jmx_console_pw" : "rplinux"
+  },
+  "host_default_values" : {
+    "os_user_id" : "hsyang",
+    "os_user_pw" : "gmltjs",
+    "os_root_pw" : "gmltjs",
+    "java_home" : "/usr/java/jdk1.7.0_79",
+    "jboss_home" : "/sw/jboss/jboss-eap-5.2",
+    "domain_base" : "/sw/jboss/jboss-eap-5.2/domains"
+  },
+  "services" : [ {
+    "name" : "cloud-portal",
+    "jboss_hosts" : [ {
+      "ip" : "127.0.0.1",
+      "os_user_id" : "",
+      "os_user_pw" : "",
+      "os_root_pw" : "",
+      "java_home" : "",
+      "jboss_home" : "",
+      "domain_base" : "",
+      "instances" : [ {
+        "instance_name" : "prod1",
+        "log_home" : "",
+        "domain_ip" : "${ip}",
+        "port_offset" : "0",
+        "jmx_console_port" : "1099",
+        "jmx_console_id" : "",
+        "jmx_console_pw" : "",
+        "result" : {
+          "jboss_version" : {
+            "Version" : "5.2.0. (build: SVNTagJBPAPP_5_2_0 date201211232041)"
+          },
+          "java_version" : {
+            "JavaVersion" : "1.7.0_79"
+          },
+          "jboss_directory" : {
+            "ServerLogDir" : "/sw/jboss/jboss-eap-5.2/domains/prod1/log",
+            "HomeDir" : "/sw/jboss/jboss-eap-5.2/jboss-as",
+            "ServerHomeDir" : "/sw/jboss/jboss-eap-5.2/domains/prod1"
+          },
+          "java_heap_size" : {
+            "TotalMemory" : "533200896",
+            "MaxMemory" : "757071872",
+            "FreeMemory" : "302806760"
+          },
+          "datasources" : [ {
+            "jboss.jca:service=ManagedConnectionPool,name=mysqlds" : {
+              "InUseConnectionCount" : 0,
+              "ConnectionCount" : 0,
+              "MaxSize" : 30
+            }
+          }, {
+            "jboss.jca:service=ManagedConnectionPool,name=JmsXA" : {
+              "InUseConnectionCount" : 0,
+              "ConnectionCount" : 0,
+              "MaxSize" : 20
+            }
+          }, {
+            "jboss.jca:service=ManagedConnectionPool,name=DefaultDS" : {
+              "InUseConnectionCount" : 0,
+              "ConnectionCount" : 5,
+              "MaxSize" : 20
+            }
+          } ],
+          "thread_pools" : [ {
+            "jboss.web:type=ThreadPool,name=ajp-0.0.0.0-8009" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 0,
+              "maxThreads" : 500
+            }
+          }, {
+            "jboss.web:type=ThreadPool,name=http-0.0.0.0-8080" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 6,
+              "maxThreads" : 500
+            }
+          }, {
+            "jboss.web:type=ThreadPool,name=http-0.0.0.0-8443" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 0,
+              "maxThreads" : 2048
+            }
+          } ],
+          "deployments" : [ {
+            "jboss.web.deployment:war=/ROOT" : "/ROOT"
+          }, {
+            "jboss.web.deployment:war=/spis" : "/spis"
+          }, {
+            "jboss.web.deployment:war=/ibatis" : "/ibatis"
+          }, {
+            "jboss.web.deployment:war=/web-console" : "/web-console"
+          }, {
+            "jboss.web.deployment:war=/jbossws" : "/jbossws"
+          }, {
+            "jboss.web.deployment:war=/simple" : "/simple"
+          }, {
+            "jboss.web.deployment:war=/admin-console" : "/admin-console"
+          }, {
+            "jboss.web.deployment:war=/jmx-console" : "/jmx-console"
+          }, {
+            "jboss.web.deployment:war=/spring-ibatis" : "/spring-ibatis"
+          }, {
+            "jboss.web.deployment:war=/invoker" : "/invoker"
+          }, {
+            "jboss.web.deployment:war=/juddi" : "/juddi"
+          } ]
+        }
+      } ]
+    } ]
+  } ],
+  "engineer" : {
+    "name" : "정원식",
+    "tel_no" : "010-3713-5346",
+    "email" : "midware@rockplace.co.kr"
+  },
+  "sales" : {
+    "name" : "김연수 상무",
+    "tel_no" : "010-3388-0881",
+    "email" : "sales@rockplace.co.kr"
+  },
+  "customer" : {
+    "name" : "KT Cloud",
+    "inspection_place" : "KT본사"
+  }
+}

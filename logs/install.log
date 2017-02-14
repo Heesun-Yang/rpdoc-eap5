@@ -1,0 +1,48 @@
+14.02.2017 13:33:07 [INFO ] ReportUtil: Load Properties:config/properties 
+14.02.2017 13:33:07 [DEBUG] ReportUtil: Properties:{server_log_file_error_string.0=OutOfMemoryError:Heap memory 부족, display_default_datasource=no, server_log_file_date_expr=server.log.2017-01-??, gc_log_file_max_total_size=104857600, gc_log_dir=gclog, gc_log_file_date_expr=gc.log, server_log_file_inspection=yes, server_log_file_max_total_size=104857600, server_log_file_error_string.4=Too many open files:OS File생성 최대치 도달, server_log_file_error_string.3=Closing a connection for you:DB Connection Leak 발생, gc_log_file_inspection=yes, server_log_file_error_string.2=Maximum number of threads:Thread생성 최대치 도달, server_log_file_error_string.1=Unable to get managed connection:JDBC Connection Error} 
+14.02.2017 13:33:12 [INFO ] GenerateRpDocx: Parsing Json Data: data/services_result.json 
+14.02.2017 13:33:13 [INFO ] RpDocxTool: Progressing: addOverviewPage 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():java.lang.String 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: content:1. 월 정기점검 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():org.docx4j.wml.Br 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: createBr() 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():java.lang.String 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: content:2. 점검 내용 : 뒷면 장비별 점검일지 참조 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():org.docx4j.wml.Br 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: createBr() 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():java.lang.String 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: content:3. 점검 이력 : 월 정기점검 특이 사항 추가 
+14.02.2017 13:33:13 [INFO ] RpDocxTool: Progressing: addInspectionResult 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: =================================== 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: services count: 1 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: =================================== 
+14.02.2017 13:33:13 [INFO ] RpDocxTool: ------------------------------------ 
+14.02.2017 13:33:13 [INFO ] RpDocxTool: service name: cloud-portal 
+14.02.2017 13:33:13 [INFO ] RpDocxTool: ------------------------------------ 
+14.02.2017 13:33:13 [INFO ] RpDocxTool:   host: 127.0.0.1 
+14.02.2017 13:33:13 [INFO ] RpDocxTool:     instance: prod1 
+14.02.2017 13:33:13 [INFO ] RpDocxTool: engine_disk_usage:69% 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: deployments_list:[{jboss.web.deployment:war=/ROOT=/ROOT}, {jboss.web.deployment:war=/spis=/spis}, {jboss.web.deployment:war=/ibatis=/ibatis}, {jboss.web.deployment:war=/web-console=/web-console}, {jboss.web.deployment:war=/jbossws=/jbossws}, {jboss.web.deployment:war=/simple=/simple}, {jboss.web.deployment:war=/admin-console=/admin-console}, {jboss.web.deployment:war=/jmx-console=/jmx-console}, {jboss.web.deployment:war=/spring-ibatis=/spring-ibatis}, {jboss.web.deployment:war=/invoker=/invoker}, {jboss.web.deployment:war=/juddi=/juddi}] 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: heap_old_memory_pool_path:java_memory_pools.CMSOldGen.peak_usage 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: perm_memory_pool_path:java_memory_pools.CMSPermGen.peak_usage 
+14.02.2017 13:33:13 [INFO ] RpDocxTool: heap_old_memory_peak_usage_map:{max=567672832, committed=567672832, init=253100032, used=560512816} 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():java.lang.String 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: content:/web-console 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():org.docx4j.wml.Br 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: createBr() 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():java.lang.String 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: content:/admin-console 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():org.docx4j.wml.Br 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: createBr() 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: obj.getClass().getName():java.lang.String 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool: content:/jmx-console 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool:       connector_name:http-0.0.0.0-8080 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool:       connector_map:{currentThreadsBusy=0, maxThreads=500, currentThreadCount=2} 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool:       connector_name:ajp-0.0.0.0-8009 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool:       connector_map:{currentThreadsBusy=0, maxThreads=500, currentThreadCount=0} 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool:       connector_name:http-0.0.0.0-8443 
+14.02.2017 13:33:13 [DEBUG] RpDocxTool:       connector_map:{currentThreadsBusy=0, maxThreads=2048, currentThreadCount=0} 
+14.02.2017 13:33:14 [INFO ] GenerateRpDocx: Generating Document is completed 
+14.02.2017 13:33:14 [INFO ] GenerateRpDocx: ============================================== 
+14.02.2017 13:33:14 [INFO ] GenerateRpDocx: Location: docx/JBoss-EAP-KTCloud-2017-2-14.docx 
+14.02.2017 13:33:14 [INFO ] GenerateRpDocx: ============================================== 
