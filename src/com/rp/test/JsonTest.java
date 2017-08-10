@@ -11,7 +11,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.rp.docs.eap5.ReportUtil;
+import com.rp.docs.eap5.collecting_data.ReportUtil;
 
 public class JsonTest {
 	static Logger log = LoggerFactory.getLogger(JsonTest.class);

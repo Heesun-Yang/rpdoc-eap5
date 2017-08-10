@@ -18,7 +18,7 @@
   "services" : [ {
     "name" : "cloud-portal",
     "jboss_hosts" : [ {
-      "ip" : "127.0.0.1",
+      "ip" : "192.168.102.39",
       "os_user_id" : "",
       "os_user_pw" : "",
       "os_root_pw" : "",
@@ -27,15 +27,16 @@
       "domain_base" : "",
       "instances" : [ {
         "instance_name" : "prod1",
-        "log_home" : "",
-        "domain_ip" : "${ip}",
+        "domain_ip" : "127.0.0.1",
         "port_offset" : "0",
         "jmx_console_port" : "1099",
         "jmx_console_id" : "",
         "jmx_console_pw" : "",
         "result" : {
+          "input_arguments" : [ "-Dprogram.name=run.sh", "-server", "-Dserver=prod1", "-Djboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains", "-Djboss.server.base.url=file:///sw/jboss/jboss-eap-5.2/domains", "-Djboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/log", "-Djboss.service.binding.set=ports-default", "-Djboss.server.log.threshold=INFO", "-Dfile.encoding=utf-8", "-Djboss.jvmRoute=prod1", "-Djboss.partition.name=mygroup1", "-Djboss.partition.udpGroup=228.2.2.9", "-Djboss.jgroups.udp.mcast_port=44559", "-Djboss.messaging.ServerPeerID=1", "-Xms512m", "-Xmx812m", "-XX:PermSize=128m", "-XX:MaxPermSize=256m", "-Xss256k", "-verbose:gc", "-Xloggc:/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/gc.log", "-XX:+PrintGCTimeStamps", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/java_pid.hprof", "-XX:+UseConcMarkSweepGC", "-Dorg.jboss.resolver.warning=true", "-Djava.net.preferIPv4Stack=true", "-Dsun.rmi.dgc.client.gcInterval=3600000", "-Dsun.rmi.dgc.server.gcInterval=3600000", "-Dsun.lang.ClassLoader.allowArraySyntax=true", "-Djava.net.preferIPv4Stack=true", "-Djava.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed", "-classpath", "-c", "-b 0.0.0.0" ],
           "jboss_version" : {
-            "Version" : "5.2.0. (build: SVNTagJBPAPP_5_2_0 date201211232041)"
+            "VersionName" : "EAP",
+            "VersionNumber" : "5.2.0."
           },
           "java_version" : {
             "JavaVersion" : "1.7.0_79"
@@ -46,48 +47,119 @@
             "ServerHomeDir" : "/sw/jboss/jboss-eap-5.2/domains/prod1"
           },
           "java_heap_size" : {
-            "TotalMemory" : "533200896",
-            "MaxMemory" : "757071872",
-            "FreeMemory" : "302806760"
+            "TotalMemory" : "647127040",
+            "MaxMemory" : "823066624",
+            "FreeMemory" : "166423936"
           },
-          "datasources" : [ {
-            "jboss.jca:service=ManagedConnectionPool,name=mysqlds" : {
-              "InUseConnectionCount" : 0,
-              "ConnectionCount" : 0,
-              "MaxSize" : 30
+          "java_memory_pools" : {
+            "CMSPermGen" : {
+              "peak_usage" : {
+                "init" : "134217728",
+                "committed" : "134217728",
+                "max" : "268435456",
+                "used" : "79708800"
+              },
+              "current_usage" : {
+                "init" : "134217728",
+                "committed" : "134217728",
+                "max" : "268435456",
+                "used" : "79708800"
+              }
+            },
+            "CodeCache" : {
+              "peak_usage" : {
+                "init" : "2555904",
+                "committed" : "7208960",
+                "max" : "50331648",
+                "used" : "6907456"
+              },
+              "current_usage" : {
+                "init" : "2555904",
+                "committed" : "7208960",
+                "max" : "50331648",
+                "used" : "6497664"
+              }
+            },
+            "ParSurvivorSpace" : {
+              "peak_usage" : {
+                "init" : "28377088",
+                "committed" : "28377088",
+                "max" : "28377088",
+                "used" : "28377088"
+              },
+              "current_usage" : {
+                "init" : "28377088",
+                "committed" : "28377088",
+                "max" : "28377088",
+                "used" : "28377088"
+              }
+            },
+            "ParEdenSpace" : {
+              "peak_usage" : {
+                "init" : "227016704",
+                "committed" : "227016704",
+                "max" : "227016704",
+                "used" : "227016704"
+              },
+              "current_usage" : {
+                "init" : "227016704",
+                "committed" : "227016704",
+                "max" : "227016704",
+                "used" : "184991960"
+              }
+            },
+            "CMSOldGen" : {
+              "peak_usage" : {
+                "init" : "253100032",
+                "committed" : "391733248",
+                "max" : "567672832",
+                "used" : "278341784"
+              },
+              "current_usage" : {
+                "init" : "253100032",
+                "committed" : "391733248",
+                "max" : "567672832",
+                "used" : "267670472"
+              }
             }
-          }, {
-            "jboss.jca:service=ManagedConnectionPool,name=JmsXA" : {
-              "InUseConnectionCount" : 0,
-              "ConnectionCount" : 0,
-              "MaxSize" : 20
+          },
+          "datasources" : {
+            "DefaultDS" : {
+              "InUseConnectionCount" : "0",
+              "ConnectionCount" : "5",
+              "MaxConnectionsInUseCount" : "1",
+              "MaxSize" : "20"
+            },
+            "mysqlds" : {
+              "InUseConnectionCount" : "0",
+              "ConnectionCount" : "0",
+              "MaxConnectionsInUseCount" : "0",
+              "MaxSize" : "30"
+            },
+            "JmsXA" : {
+              "InUseConnectionCount" : "0",
+              "ConnectionCount" : "0",
+              "MaxConnectionsInUseCount" : "0",
+              "MaxSize" : "20"
             }
-          }, {
-            "jboss.jca:service=ManagedConnectionPool,name=DefaultDS" : {
-              "InUseConnectionCount" : 0,
-              "ConnectionCount" : 5,
-              "MaxSize" : 20
-            }
-          } ],
-          "thread_pools" : [ {
-            "jboss.web:type=ThreadPool,name=ajp-0.0.0.0-8009" : {
-              "currentThreadsBusy" : 0,
-              "currentThreadCount" : 0,
-              "maxThreads" : 500
-            }
-          }, {
-            "jboss.web:type=ThreadPool,name=http-0.0.0.0-8080" : {
-              "currentThreadsBusy" : 0,
-              "currentThreadCount" : 6,
-              "maxThreads" : 500
-            }
-          }, {
-            "jboss.web:type=ThreadPool,name=http-0.0.0.0-8443" : {
+          },
+          "thread_pools" : {
+            "http-0.0.0.0-8443" : {
               "currentThreadsBusy" : 0,
               "currentThreadCount" : 0,
               "maxThreads" : 2048
+            },
+            "ajp-0.0.0.0-8009" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 0,
+              "maxThreads" : 500
+            },
+            "http-0.0.0.0-8080" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 0,
+              "maxThreads" : 500
             }
-          } ],
+          },
           "deployments" : [ {
             "jboss.web.deployment:war=/ROOT" : "/ROOT"
           }, {
@@ -110,9 +182,512 @@
             "jboss.web.deployment:war=/invoker" : "/invoker"
           }, {
             "jboss.web.deployment:war=/juddi" : "/juddi"
-          } ]
+          } ],
+          "system_properties" : {
+            "awt.toolkit" : "sun.awt.X11.XToolkit",
+            "java.specification.version" : "1.7",
+            "com.arjuna.common.util.logging.FacilityLevel" : "0xffffffff",
+            "sun.jnu.encoding" : "UTF-8",
+            "jboss.jgroups.udp_async.mcast_port" : "45689",
+            "jboss.lib.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/lib/",
+            "hornetq.remoting.netty.batch.port" : "5455",
+            "jboss.jgroups.udp.mcast_port" : "44559",
+            "org.jboss.resolver.warning" : "true",
+            "sun.arch.data.model" : "64",
+            "sun.font.fontmanager" : "sun.awt.X11FontManager",
+            "jboss.jgroups.tcp_sync.tcp_port" : "7650",
+            "java.vendor.url" : "http://java.oracle.com/",
+            "org.omg.CORBA.ORBSingletonClass" : "org.jboss.system.ORBSingleton",
+            "jboss.server.base.url" : "file:/sw/jboss/jboss-eap-5.2/domains/",
+            "org.apache.catalina.core.StandardService.DELAY_CONNECTOR_STARTUP" : "true",
+            "sun.boot.library.path" : "/usr/java/jdk1.7.0_79/jre/lib/amd64",
+            "hornetq.remoting.netty.ssl.port" : "5446",
+            "sun.java.command" : "org.jboss.Main -c prod1 -b 0.0.0.0",
+            "jboss.server.log.threshold" : "INFO",
+            "org.jboss.ORBSingletonDelegate" : "org.jacorb.orb.ORBSingleton",
+            "jboss.messaging.datachanneludpport" : "45710",
+            "com.arjuna.common.util.logging.VisibilityLevel" : "0xffffffff",
+            "java.specification.vendor" : "Oracle Corporation",
+            "java.naming.factory.url.pkgs" : "org.jboss.naming:org.jnp.interfaces",
+            "java.home" : "/usr/java/jdk1.7.0_79/jre",
+            "jboss.messaging.datachanneltcpport" : "7900",
+            "jboss.jgroups.udp_sync.mcast_port" : "45699",
+            "file.separator" : "/",
+            "jboss.jgroups.udp_sync.bind_port" : "55250",
+            "jboss.server.data.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod1/data",
+            "line.separator" : "",
+            "java.specification.name" : "Java Platform API Specification",
+            "java.vm.specification.vendor" : "Oracle Corporation",
+            "jboss.server.base.dir" : "/sw/jboss/jboss-eap-5.2/domains",
+            "jboss.messaging.ServerPeerID" : "1",
+            "jboss.jgroups.tcp_sync.mping_mcast_addr" : "228.2.2.9",
+            "hornetq.backup1.remoting.netty.port" : "5465",
+            "jboss.jvmRoute" : "prod1",
+            "server" : "prod1",
+            "xb.builder.useUnorderedSequence" : "true",
+            "sun.boot.class.path" : "/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/resolver.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jbossws-native-factories.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxb-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xalan.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/serializer.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxws-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xercesImpl.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/activation.jar:/usr/java/jdk1.7.0_79/jre/lib/resources.jar:/usr/java/jdk1.7.0_79/jre/lib/rt.jar:/usr/java/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/java/jdk1.7.0_79/jre/lib/jsse.jar:/usr/java/jdk1.7.0_79/jre/lib/jce.jar:/usr/java/jdk1.7.0_79/jre/lib/charsets.jar:/usr/java/jdk1.7.0_79/jre/lib/jfr.jar:/usr/java/jdk1.7.0_79/jre/classes",
+            "java.protocol.handler.pkgs" : "org.jboss.net.protocol|org.jboss.virtual.protocol",
+            "sun.lang.ClassLoader.allowArraySyntax" : "true",
+            "sun.management.compiler" : "HotSpot 64-Bit Tiered Compilers",
+            "jboss.jgroups.tcp.mping_mcast_addr" : "228.2.2.9",
+            "jboss.server.config.url" : "file:/sw/jboss/jboss-eap-5.2/domains/prod1/conf/",
+            "java.runtime.version" : "1.7.0_79-b15",
+            "user.name" : "hsyang",
+            "file.encoding" : "utf-8",
+            "hornetq.remoting.netty.port" : "5445",
+            "org.apache.catalina.connector.Request.SESSION_ID_CHECK" : "true",
+            "sun.rmi.dgc.client.gcInterval" : "3600000",
+            "catalina.ext.dirs" : "/sw/jboss/jboss-eap-5.2/domains/prod1/lib",
+            "jboss.jgroups.diagnostics_port" : "7500",
+            "jboss.jgroups.jbm_data.mping_mcast_addr" : "228.2.2.9",
+            "org.apache.catalina.STRICT_SERVLET_COMPLIANCE" : "true",
+            "java.io.tmpdir" : "/tmp",
+            "jboss.jgroups.udp_async.bind_port" : "55225",
+            "bind.address" : "hsyang-pc",
+            "java.version" : "1.7.0_79",
+            "PROPERTIES_FILE" : "tsmx.properties",
+            "jboss.jgroups.udp_async.fd_sock_port" : "54225",
+            "jboss.service.binding.set" : "ports-default",
+            "java.vm.specification.name" : "Java Virtual Machine Specification",
+            "java.awt.printerjob" : "sun.print.PSPrinterJob",
+            "jboss.bind.address" : "0.0.0.0",
+            "sun.os.patch.level" : "unknown",
+            "jboss.jgroups.udp.bind_port" : "55200",
+            "java.library.path" : ":/sw/jboss/jboss-eap-5.2/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib",
+            "jboss.server.name" : "prod1",
+            "java.vendor" : "Oracle Corporation",
+            "jgroups.bind_addr" : "hsyang-pc",
+            "jboss.jgroups.udp.fd_sock_port" : "54200",
+            "sun.io.unicode.encoding" : "UnicodeLittle",
+            "hornetq.backup1.remoting.netty.batch.port" : "5475",
+            "jboss.server.temp.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod1/tmp",
+            "tomcat.util.buf.StringCache.byte.enabled" : "true",
+            "jboss.jgroups.udp_async.mcast_addr" : "228.11.11.11",
+            "jboss.server.home.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod1",
+            "sun.desktop" : "gnome",
+            "file.encoding.pkg" : "sun.io",
+            "org.apache.catalina.core.StandardHost.configClass" : "org.jboss.web.tomcat.service.deployers.JBossContextConfig",
+            "jboss.jgroups.udp.mcast_addr" : "228.11.11.11",
+            "java.class.path" : "/sw/jboss/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.7.0_79/lib/tools.jar",
+            "jboss.jgroups.udp_sync.fd_sock_port" : "54250",
+            "org.apache.catalina.core.StandardHost.startChildren" : "false",
+            "java.vm.vendor" : "Oracle Corporation",
+            "jboss.jgroups.tcp.tcp_port" : "7600",
+            "java.rmi.server.codebase" : "http://hsyang-pc:8083/",
+            "com.arjuna.common.util.logger" : "log4j_releveler",
+            "jboss.jgroups.udp_sync.mcast_addr" : "229.11.11.11",
+            "user.timezone" : "Asia/Seoul",
+            "jboss.jgroups.tcp_sync.mping_mcast_port" : "45701",
+            "java.vm.specification.version" : "1.7",
+            "jboss.server.lib.url" : "file:/sw/jboss/jboss-eap-5.2/domains/prod1/lib/",
+            "os.name" : "Linux",
+            "program.name" : "run.sh",
+            "jboss.vfs.forceCopy" : "true",
+            "sun.java.launcher" : "SUN_STANDARD",
+            "user.country" : "KR",
+            "jboss.common.base.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/common/",
+            "org.apache.catalina.core.StandardHost.autoDeploy" : "false",
+            "sun.cpu.endian" : "little",
+            "jboss.server.home.url" : "file:/sw/jboss/jboss-eap-5.2/domains/prod1/",
+            "user.home" : "/home/hsyang",
+            "user.language" : "ko",
+            "jboss.common.lib.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/common/lib/",
+            "jboss.jgroups.diagnostics_addr" : "224.0.75.75",
+            "java.awt.graphicsenv" : "sun.awt.X11GraphicsEnvironment",
+            "org.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER" : "true",
+            "jboss.partition.udpGroup" : "228.2.2.9",
+            "com.arjuna.ats.arjuna.objectstore.objectStoreDir" : "/sw/jboss/jboss-eap-5.2/domains/prod1/data/tx-object-store",
+            "org.omg.CORBA.ORBClass" : "org.jacorb.orb.ORB",
+            "com.arjuna.common.util.logging.DebugLevel" : "0x00000000",
+            "jboss.jgroups.jbm_data.fd_sock_port" : "57900",
+            "TSMX_VERSION" : "unknown",
+            "org.apache.catalina.core.StandardHost.deployXML" : "false",
+            "sun.rmi.dgc.server.gcInterval" : "3600000",
+            "com.arjuna.ats.tsmx.agentimpl" : "com.arjuna.ats.internal.jbossatx.agent.LocalJBossAgentImpl",
+            "java.naming.factory.initial" : "org.jboss.iiop.naming.ORBInitialContextFactory",
+            "java.net.preferIPv4Stack" : "true",
+            "jboss.home.dir" : "/sw/jboss/jboss-eap-5.2/jboss-as",
+            "path.separator" : ":",
+            "jgroups.tcp.mping_mcast_port" : "45700",
+            "jboss.jgroups.jbm_control.fd_sock_port" : "53200",
+            "os.version" : "3.19.0-30-generic",
+            "java.endorsed.dirs" : "/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed",
+            "java.runtime.name" : "Java(TM) SE Runtime Environment",
+            "java.vm.name" : "Java HotSpot(TM) 64-Bit Server VM",
+            "jboss.messaging.connector.bisocket.port" : "4457",
+            "jboss.remoting.version" : "22",
+            "java.vendor.url.bug" : "http://bugreport.sun.com/bugreport/",
+            "jboss.server.log.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod1/log",
+            "jboss.jgroups.tcp.fd_sock_port" : "57600",
+            "catalina.home" : "/sw/jboss/jboss-eap-5.2/domains/prod1",
+            "user.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod1",
+            "os.arch" : "amd64",
+            "hornetq.backup1.remoting.netty.ssl.port" : "5466",
+            "jboss.home.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/",
+            "javax.management.builder.initial" : "org.jboss.mx.server.MBeanServerBuilderImpl",
+            "jboss.jgroups.tcp_sync.fd_sock_port" : "57650",
+            "jboss.partition.name" : "mygroup1",
+            "java.util.logging.manager" : "org.jboss.logmanager.LogManager",
+            "java.vm.info" : "mixed mode",
+            "java.vm.version" : "24.79-b02",
+            "java.rmi.server.hostname" : "hsyang-pc",
+            "java.ext.dirs" : "/usr/java/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext",
+            "org.apache.catalina.core.StandardHost.deployOnStartup" : "false",
+            "com.arjuna.ats.jta.lastResourceOptimisationInterface" : "org.jboss.tm.LastResource",
+            "org.apache.commons.logging.Log" : "org.apache.commons.logging.impl.Log4JLogger",
+            "jbossmx.loader.repository.class" : "org.jboss.mx.loading.UnifiedLoaderRepository3",
+            "java.class.version" : "51.0",
+            "java.rmi.server.RMIClassLoaderSpi" : "org.jboss.system.JBossRMIClassLoader"
+          },
+          "disk_usage" : {
+            "engine_disk_usage" : "66%",
+            "log_disk_usage" : "66%"
+          },
+          "server_log_file_inspection" : {
+            "Too many open files" : "0",
+            "Closing a connection for you" : "0",
+            "Unable to get managed connection" : "0",
+            "OutOfMemoryError" : "0",
+            "Maximum number of threads" : "0"
+          },
+          "gc_log_file_inspection" : {
+            "MaxGcDuration" : "0.191297",
+            "FullGcAvgInterval" : "5.971"
+          }
         }
-      } ]
+      }, {
+        "instance_name" : "prod2",
+        "domain_ip" : "127.0.0.1",
+        "port_offset" : "100",
+        "jmx_console_port" : "1199",
+        "jmx_console_id" : "",
+        "jmx_console_pw" : "",
+        "result" : {
+          "input_arguments" : [ "-Dprogram.name=run.sh", "-server", "-Dserver=prod2", "-Djboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains", "-Djboss.server.base.url=file:///sw/jboss/jboss-eap-5.2/domains", "-Djboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod2/log", "-Djboss.service.binding.set=ports-01", "-Djboss.server.log.threshold=INFO", "-Dfile.encoding=utf-8", "-Djboss.jvmRoute=prod2", "-Djboss.partition.name=mygroup1", "-Djboss.partition.udpGroup=228.2.2.9", "-Djboss.jgroups.udp.mcast_port=44559", "-Djboss.messaging.ServerPeerID=1", "-Xms512m", "-Xmx812m", "-XX:PermSize=128m", "-XX:MaxPermSize=256m", "-Xss256k", "-verbose:gc", "-Xloggc:/sw/jboss/jboss-eap-5.2/domains/prod2/log/gclog/gc.log", "-XX:+PrintGCTimeStamps", "-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/sw/jboss/jboss-eap-5.2/domains/prod2/log/gclog/java_pid.hprof", "-XX:+UseConcMarkSweepGC", "-Dorg.jboss.resolver.warning=true", "-Djava.net.preferIPv4Stack=true", "-Dsun.rmi.dgc.client.gcInterval=3600000", "-Dsun.rmi.dgc.server.gcInterval=3600000", "-Dsun.lang.ClassLoader.allowArraySyntax=true", "-Djava.net.preferIPv4Stack=true", "-Djava.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed", "-classpath", "-c", "-b 0.0.0.0" ],
+          "jboss_version" : {
+            "VersionName" : "EAP",
+            "VersionNumber" : "5.2.0."
+          },
+          "java_version" : {
+            "JavaVersion" : "1.7.0_79"
+          },
+          "jboss_directory" : {
+            "ServerLogDir" : "/sw/jboss/jboss-eap-5.2/domains/prod2/log",
+            "HomeDir" : "/sw/jboss/jboss-eap-5.2/jboss-as",
+            "ServerHomeDir" : "/sw/jboss/jboss-eap-5.2/domains/prod2"
+          },
+          "java_heap_size" : {
+            "TotalMemory" : "649416704",
+            "MaxMemory" : "823066624",
+            "FreeMemory" : "308455752"
+          },
+          "java_memory_pools" : {
+            "CMSPermGen" : {
+              "peak_usage" : {
+                "init" : "134217728",
+                "committed" : "134217728",
+                "max" : "268435456",
+                "used" : "77635240"
+              },
+              "current_usage" : {
+                "init" : "134217728",
+                "committed" : "134217728",
+                "max" : "268435456",
+                "used" : "77635240"
+              }
+            },
+            "CodeCache" : {
+              "peak_usage" : {
+                "init" : "2555904",
+                "committed" : "7208960",
+                "max" : "50331648",
+                "used" : "6851264"
+              },
+              "current_usage" : {
+                "init" : "2555904",
+                "committed" : "7208960",
+                "max" : "50331648",
+                "used" : "6485952"
+              }
+            },
+            "ParSurvivorSpace" : {
+              "peak_usage" : {
+                "init" : "28377088",
+                "committed" : "28377088",
+                "max" : "28377088",
+                "used" : "28377088"
+              },
+              "current_usage" : {
+                "init" : "28377088",
+                "committed" : "28377088",
+                "max" : "28377088",
+                "used" : "28377088"
+              }
+            },
+            "ParEdenSpace" : {
+              "peak_usage" : {
+                "init" : "227016704",
+                "committed" : "227016704",
+                "max" : "227016704",
+                "used" : "227016704"
+              },
+              "current_usage" : {
+                "init" : "227016704",
+                "committed" : "227016704",
+                "max" : "227016704",
+                "used" : "48010192"
+              }
+            },
+            "CMSOldGen" : {
+              "peak_usage" : {
+                "init" : "253100032",
+                "committed" : "394022912",
+                "max" : "567672832",
+                "used" : "274382504"
+              },
+              "current_usage" : {
+                "init" : "253100032",
+                "committed" : "394022912",
+                "max" : "567672832",
+                "used" : "264779416"
+              }
+            }
+          },
+          "datasources" : {
+            "DefaultDS" : {
+              "InUseConnectionCount" : "0",
+              "ConnectionCount" : "5",
+              "MaxConnectionsInUseCount" : "1",
+              "MaxSize" : "20"
+            },
+            "mysqlds" : {
+              "InUseConnectionCount" : "0",
+              "ConnectionCount" : "0",
+              "MaxConnectionsInUseCount" : "0",
+              "MaxSize" : "30"
+            },
+            "JmsXA" : {
+              "InUseConnectionCount" : "0",
+              "ConnectionCount" : "0",
+              "MaxConnectionsInUseCount" : "0",
+              "MaxSize" : "20"
+            }
+          },
+          "thread_pools" : {
+            "ajp-0.0.0.0-8109" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 0,
+              "maxThreads" : 500
+            },
+            "http-0.0.0.0-8543" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 0,
+              "maxThreads" : 2048
+            },
+            "http-0.0.0.0-8180" : {
+              "currentThreadsBusy" : 0,
+              "currentThreadCount" : 0,
+              "maxThreads" : 500
+            }
+          },
+          "deployments" : [ {
+            "jboss.web.deployment:war=/ROOT" : "/ROOT"
+          }, {
+            "jboss.web.deployment:war=/spis" : "/spis"
+          }, {
+            "jboss.web.deployment:war=/ibatis" : "/ibatis"
+          }, {
+            "jboss.web.deployment:war=/web-console" : "/web-console"
+          }, {
+            "jboss.web.deployment:war=/jbossws" : "/jbossws"
+          }, {
+            "jboss.web.deployment:war=/simple" : "/simple"
+          }, {
+            "jboss.web.deployment:war=/admin-console" : "/admin-console"
+          }, {
+            "jboss.web.deployment:war=/jmx-console" : "/jmx-console"
+          }, {
+            "jboss.web.deployment:war=/spring-ibatis" : "/spring-ibatis"
+          }, {
+            "jboss.web.deployment:war=/invoker" : "/invoker"
+          }, {
+            "jboss.web.deployment:war=/juddi" : "/juddi"
+          } ],
+          "system_properties" : {
+            "awt.toolkit" : "sun.awt.X11.XToolkit",
+            "java.specification.version" : "1.7",
+            "com.arjuna.common.util.logging.FacilityLevel" : "0xffffffff",
+            "sun.jnu.encoding" : "UTF-8",
+            "jboss.jgroups.udp_async.mcast_port" : "45689",
+            "jboss.lib.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/lib/",
+            "hornetq.remoting.netty.batch.port" : "5555",
+            "jboss.jgroups.udp.mcast_port" : "44559",
+            "org.jboss.resolver.warning" : "true",
+            "sun.arch.data.model" : "64",
+            "sun.font.fontmanager" : "sun.awt.X11FontManager",
+            "jboss.jgroups.tcp_sync.tcp_port" : "7750",
+            "java.vendor.url" : "http://java.oracle.com/",
+            "org.omg.CORBA.ORBSingletonClass" : "org.jboss.system.ORBSingleton",
+            "jboss.server.base.url" : "file:/sw/jboss/jboss-eap-5.2/domains/",
+            "org.apache.catalina.core.StandardService.DELAY_CONNECTOR_STARTUP" : "true",
+            "sun.boot.library.path" : "/usr/java/jdk1.7.0_79/jre/lib/amd64",
+            "hornetq.remoting.netty.ssl.port" : "5546",
+            "sun.java.command" : "org.jboss.Main -c prod2 -b 0.0.0.0",
+            "jboss.server.log.threshold" : "INFO",
+            "org.jboss.ORBSingletonDelegate" : "org.jacorb.orb.ORBSingleton",
+            "jboss.messaging.datachanneludpport" : "45710",
+            "com.arjuna.common.util.logging.VisibilityLevel" : "0xffffffff",
+            "java.specification.vendor" : "Oracle Corporation",
+            "java.naming.factory.url.pkgs" : "org.jboss.naming:org.jnp.interfaces",
+            "java.home" : "/usr/java/jdk1.7.0_79/jre",
+            "jboss.messaging.datachanneltcpport" : "8000",
+            "jboss.jgroups.udp_sync.mcast_port" : "45699",
+            "file.separator" : "/",
+            "jboss.jgroups.udp_sync.bind_port" : "55350",
+            "jboss.server.data.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod2/data",
+            "line.separator" : "",
+            "java.specification.name" : "Java Platform API Specification",
+            "java.vm.specification.vendor" : "Oracle Corporation",
+            "jboss.server.base.dir" : "/sw/jboss/jboss-eap-5.2/domains",
+            "jboss.messaging.ServerPeerID" : "1",
+            "jboss.jgroups.tcp_sync.mping_mcast_addr" : "228.2.2.9",
+            "hornetq.backup1.remoting.netty.port" : "5565",
+            "jboss.jvmRoute" : "prod2",
+            "server" : "prod2",
+            "xb.builder.useUnorderedSequence" : "true",
+            "sun.boot.class.path" : "/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/resolver.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jbossws-native-factories.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxb-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xalan.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/serializer.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxws-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xercesImpl.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/activation.jar:/usr/java/jdk1.7.0_79/jre/lib/resources.jar:/usr/java/jdk1.7.0_79/jre/lib/rt.jar:/usr/java/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/java/jdk1.7.0_79/jre/lib/jsse.jar:/usr/java/jdk1.7.0_79/jre/lib/jce.jar:/usr/java/jdk1.7.0_79/jre/lib/charsets.jar:/usr/java/jdk1.7.0_79/jre/lib/jfr.jar:/usr/java/jdk1.7.0_79/jre/classes",
+            "java.protocol.handler.pkgs" : "org.jboss.net.protocol|org.jboss.virtual.protocol",
+            "sun.lang.ClassLoader.allowArraySyntax" : "true",
+            "sun.management.compiler" : "HotSpot 64-Bit Tiered Compilers",
+            "jboss.jgroups.tcp.mping_mcast_addr" : "228.2.2.9",
+            "jboss.server.config.url" : "file:/sw/jboss/jboss-eap-5.2/domains/prod2/conf/",
+            "java.runtime.version" : "1.7.0_79-b15",
+            "user.name" : "hsyang",
+            "file.encoding" : "utf-8",
+            "hornetq.remoting.netty.port" : "5545",
+            "org.apache.catalina.connector.Request.SESSION_ID_CHECK" : "true",
+            "sun.rmi.dgc.client.gcInterval" : "3600000",
+            "catalina.ext.dirs" : "/sw/jboss/jboss-eap-5.2/domains/prod2/lib",
+            "jboss.jgroups.diagnostics_port" : "7500",
+            "jboss.jgroups.jbm_data.mping_mcast_addr" : "228.2.2.9",
+            "org.apache.catalina.STRICT_SERVLET_COMPLIANCE" : "true",
+            "java.io.tmpdir" : "/tmp",
+            "jboss.jgroups.udp_async.bind_port" : "55325",
+            "bind.address" : "hsyang-pc",
+            "java.version" : "1.7.0_79",
+            "PROPERTIES_FILE" : "tsmx.properties",
+            "jboss.jgroups.udp_async.fd_sock_port" : "54325",
+            "jboss.service.binding.set" : "ports-01",
+            "java.vm.specification.name" : "Java Virtual Machine Specification",
+            "java.awt.printerjob" : "sun.print.PSPrinterJob",
+            "jboss.bind.address" : "0.0.0.0",
+            "sun.os.patch.level" : "unknown",
+            "jboss.jgroups.udp.bind_port" : "55300",
+            "java.library.path" : ":/sw/jboss/jboss-eap-5.2/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib",
+            "jboss.server.name" : "prod2",
+            "java.vendor" : "Oracle Corporation",
+            "jgroups.bind_addr" : "hsyang-pc",
+            "jboss.jgroups.udp.fd_sock_port" : "54300",
+            "sun.io.unicode.encoding" : "UnicodeLittle",
+            "hornetq.backup1.remoting.netty.batch.port" : "5575",
+            "jboss.server.temp.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod2/tmp",
+            "tomcat.util.buf.StringCache.byte.enabled" : "true",
+            "jboss.jgroups.udp_async.mcast_addr" : "228.11.11.11",
+            "jboss.server.home.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod2",
+            "sun.desktop" : "gnome",
+            "file.encoding.pkg" : "sun.io",
+            "org.apache.catalina.core.StandardHost.configClass" : "org.jboss.web.tomcat.service.deployers.JBossContextConfig",
+            "jboss.jgroups.udp.mcast_addr" : "228.11.11.11",
+            "java.class.path" : "/sw/jboss/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.7.0_79/lib/tools.jar",
+            "jboss.jgroups.udp_sync.fd_sock_port" : "54350",
+            "org.apache.catalina.core.StandardHost.startChildren" : "false",
+            "java.vm.vendor" : "Oracle Corporation",
+            "jboss.jgroups.tcp.tcp_port" : "7700",
+            "java.rmi.server.codebase" : "http://hsyang-pc:8183/",
+            "com.arjuna.common.util.logger" : "log4j_releveler",
+            "jboss.jgroups.udp_sync.mcast_addr" : "229.11.11.11",
+            "user.timezone" : "Asia/Seoul",
+            "jboss.jgroups.tcp_sync.mping_mcast_port" : "45701",
+            "java.vm.specification.version" : "1.7",
+            "jboss.server.lib.url" : "file:/sw/jboss/jboss-eap-5.2/domains/prod2/lib/",
+            "os.name" : "Linux",
+            "program.name" : "run.sh",
+            "jboss.vfs.forceCopy" : "true",
+            "sun.java.launcher" : "SUN_STANDARD",
+            "user.country" : "KR",
+            "jboss.common.base.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/common/",
+            "org.apache.catalina.core.StandardHost.autoDeploy" : "false",
+            "sun.cpu.endian" : "little",
+            "jboss.server.home.url" : "file:/sw/jboss/jboss-eap-5.2/domains/prod2/",
+            "user.home" : "/home/hsyang",
+            "user.language" : "ko",
+            "jboss.common.lib.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/common/lib/",
+            "jboss.jgroups.diagnostics_addr" : "224.0.75.75",
+            "java.awt.graphicsenv" : "sun.awt.X11GraphicsEnvironment",
+            "org.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER" : "true",
+            "jboss.partition.udpGroup" : "228.2.2.9",
+            "com.arjuna.ats.arjuna.objectstore.objectStoreDir" : "/sw/jboss/jboss-eap-5.2/domains/prod2/data/tx-object-store",
+            "org.omg.CORBA.ORBClass" : "org.jacorb.orb.ORB",
+            "com.arjuna.common.util.logging.DebugLevel" : "0x00000000",
+            "jboss.jgroups.jbm_data.fd_sock_port" : "58000",
+            "TSMX_VERSION" : "unknown",
+            "org.apache.catalina.core.StandardHost.deployXML" : "false",
+            "sun.rmi.dgc.server.gcInterval" : "3600000",
+            "com.arjuna.ats.tsmx.agentimpl" : "com.arjuna.ats.internal.jbossatx.agent.LocalJBossAgentImpl",
+            "java.naming.factory.initial" : "org.jboss.iiop.naming.ORBInitialContextFactory",
+            "java.net.preferIPv4Stack" : "true",
+            "jboss.home.dir" : "/sw/jboss/jboss-eap-5.2/jboss-as",
+            "path.separator" : ":",
+            "jgroups.tcp.mping_mcast_port" : "45700",
+            "jboss.jgroups.jbm_control.fd_sock_port" : "53300",
+            "os.version" : "3.19.0-30-generic",
+            "java.endorsed.dirs" : "/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed",
+            "java.runtime.name" : "Java(TM) SE Runtime Environment",
+            "java.vm.name" : "Java HotSpot(TM) 64-Bit Server VM",
+            "jboss.messaging.connector.bisocket.port" : "4557",
+            "jboss.remoting.version" : "22",
+            "java.vendor.url.bug" : "http://bugreport.sun.com/bugreport/",
+            "jboss.server.log.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod2/log",
+            "jboss.jgroups.tcp.fd_sock_port" : "57700",
+            "catalina.home" : "/sw/jboss/jboss-eap-5.2/domains/prod2",
+            "user.dir" : "/sw/jboss/jboss-eap-5.2/domains/prod2",
+            "os.arch" : "amd64",
+            "hornetq.backup1.remoting.netty.ssl.port" : "5566",
+            "jboss.home.url" : "file:/sw/jboss/jboss-eap-5.2/jboss-as/",
+            "javax.management.builder.initial" : "org.jboss.mx.server.MBeanServerBuilderImpl",
+            "jboss.jgroups.tcp_sync.fd_sock_port" : "57750",
+            "jboss.partition.name" : "mygroup1",
+            "java.util.logging.manager" : "org.jboss.logmanager.LogManager",
+            "java.vm.info" : "mixed mode",
+            "java.vm.version" : "24.79-b02",
+            "java.rmi.server.hostname" : "hsyang-pc",
+            "java.ext.dirs" : "/usr/java/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext",
+            "org.apache.catalina.core.StandardHost.deployOnStartup" : "false",
+            "com.arjuna.ats.jta.lastResourceOptimisationInterface" : "org.jboss.tm.LastResource",
+            "org.apache.commons.logging.Log" : "org.apache.commons.logging.impl.Log4JLogger",
+            "jbossmx.loader.repository.class" : "org.jboss.mx.loading.UnifiedLoaderRepository3",
+            "java.class.version" : "51.0",
+            "java.rmi.server.RMIClassLoaderSpi" : "org.jboss.system.JBossRMIClassLoader"
+          },
+          "disk_usage" : {
+            "engine_disk_usage" : "66%",
+            "log_disk_usage" : "66%"
+          },
+          "server_log_file_inspection" : {
+            "Too many open files" : "0",
+            "Closing a connection for you" : "0",
+            "Unable to get managed connection" : "0",
+            "OutOfMemoryError" : "0",
+            "Maximum number of threads" : "0"
+          },
+          "gc_log_file_inspection" : {
+            "MaxGcDuration" : "0.198745",
+            "FullGcAvgInterval" : "6.364"
+          }
+        }
+      } ],
+      "hostname" : "hsyang-pc",
+      "operating_system" : "Linux x86_64"
     } ]
   } ],
   "engineer" : {

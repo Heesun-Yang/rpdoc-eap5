@@ -1,5 +1,39 @@
 #============================
 # Report
 #============================
-## Display null value in report
-display_null_value=no
+
+# Test ssh, server_log, gc_log
+# test / report
+operation_mode=report
+
+# Display Default Datasource - 예) DefaultDS, JmsXA
+display_default_datasource=no
+
+# server 로그파일 검사
+server_log_file_inspection=yes
+
+# Server Log to see
+server_log_file_date_expr=server.log.2017-01-??
+
+# Server Log Max Total Size to see (104857600 = 100MB)
+server_log_file_max_total_size=104857600
+
+# Server Log String to inspect
+# Format = server_log_file_error_string.index=에러문자열:관련설명
+server_log_file_error_string.0=OutOfMemoryError:Heap memory 부족
+server_log_file_error_string.1=Unable to get managed connection:JDBC Connection Error
+server_log_file_error_string.2=Maximum number of threads:Thread생성 최대치 도달
+server_log_file_error_string.3=Closing a connection for you:DB Connection Leak 발생
+server_log_file_error_string.4=Too many open files:OS File생성 최대치 도달
+
+# GC 로그파일 검사
+gc_log_file_inspection=yes
+
+# gclog 디렉토리 (LOG_HOME 디렉토리 기준)
+gc_log_dir=gclog
+
+# GC Log to see
+gc_log_file_date_expr=gc.log
+
+# GC Log Max Total Size to see (104857600 = 100MB)
+gc_log_file_max_total_size=104857600

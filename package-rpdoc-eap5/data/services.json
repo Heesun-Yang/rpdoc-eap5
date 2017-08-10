@@ -34,7 +34,7 @@
 				"name":"cloud-portal",
 				"jboss_hosts":[
 					{
-						"ip":"127.0.0.1",
+						"ip":"192.168.102.39",
 						"os_user_id":"",
 						"os_user_pw":"",
 						"os_root_pw":"",
@@ -44,13 +44,20 @@
 						"instances":[
 								{
 									"instance_name":"prod1",
-									"log_home":"",
-									"domain_ip":"${ip}",
+									"domain_ip":"127.0.0.1",
 									"port_offset":"0",
 									"jmx_console_port":"1099",
 									"jmx_console_id":"",
 									"jmx_console_pw":"",
 									"result":""
+								},
+								{
+									"instance_name":"prod2",
+									"domain_ip":"127.0.0.1",
+									"port_offset":"100",
+									"jmx_console_port":"1199",
+									"jmx_console_id":"",
+									"jmx_console_pw":""
 								}
 						]
 					}

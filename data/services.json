@@ -48,8 +48,7 @@
 									"port_offset":"0",
 									"jmx_console_port":"1099",
 									"jmx_console_id":"",
-									"jmx_console_pw":"",
-									"result":""
+									"jmx_console_pw":""
 								}
 						]
 					}

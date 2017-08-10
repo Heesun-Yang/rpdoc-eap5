@@ -2,6 +2,10 @@
 # Report
 #============================
 
+# Test ssh, server_log, gc_log
+# test / report
+operation_mode=report
+
 # Display Default Datasource - 예) DefaultDS, JmsXA
 display_default_datasource=no
 

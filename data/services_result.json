@@ -32,8 +32,8 @@
           },
           "java_heap_size" : {
             "MaxMemory" : "823066624",
-            "TotalMemory" : "823066624",
-            "FreeMemory" : "534602520"
+            "TotalMemory" : "647385088",
+            "FreeMemory" : "286233048"
           },
           "java_memory_pools" : {
             "CMSPermGen" : {
@@ -41,27 +41,27 @@
                 "max" : "268435456",
                 "committed" : "134217728",
                 "init" : "134217728",
-                "used" : "79454288"
+                "used" : "79207648"
               },
               "peak_usage" : {
                 "max" : "268435456",
                 "committed" : "134217728",
                 "init" : "134217728",
-                "used" : "79815776"
+                "used" : "79207648"
               }
             },
             "CMSOldGen" : {
               "current_usage" : {
                 "max" : "567672832",
-                "committed" : "567672832",
+                "committed" : "391991296",
                 "init" : "253100032",
-                "used" : "189252384"
+                "used" : "235193800"
               },
               "peak_usage" : {
                 "max" : "567672832",
-                "committed" : "567672832",
+                "committed" : "391991296",
                 "init" : "253100032",
-                "used" : "560512816"
+                "used" : "268220160"
               }
             },
             "ParEdenSpace" : {
@@ -69,7 +69,7 @@
                 "max" : "227016704",
                 "committed" : "227016704",
                 "init" : "227016704",
-                "used" : "99211720"
+                "used" : "97967768"
               },
               "peak_usage" : {
                 "max" : "227016704",
@@ -83,7 +83,7 @@
                 "max" : "28377088",
                 "committed" : "28377088",
                 "init" : "28377088",
-                "used" : "0"
+                "used" : "28377088"
               },
               "peak_usage" : {
                 "max" : "28377088",
@@ -95,15 +95,15 @@
             "CodeCache" : {
               "current_usage" : {
                 "max" : "50331648",
-                "committed" : "7208960",
+                "committed" : "7340032",
                 "init" : "2555904",
-                "used" : "6826112"
+                "used" : "6570816"
               },
               "peak_usage" : {
                 "max" : "50331648",
-                "committed" : "7208960",
+                "committed" : "7340032",
                 "init" : "2555904",
-                "used" : "7052352"
+                "used" : "6998400"
               }
             }
           },
@@ -131,7 +131,7 @@
             "http-0.0.0.0-8080" : {
               "currentThreadsBusy" : 0,
               "maxThreads" : 500,
-              "currentThreadCount" : 2
+              "currentThreadCount" : 0
             },
             "ajp-0.0.0.0-8009" : {
               "currentThreadsBusy" : 0,
@@ -162,6 +162,8 @@
             "jboss.web.deployment:war=/jmx-console" : "/jmx-console"
           }, {
             "jboss.web.deployment:war=/spring-ibatis" : "/spring-ibatis"
+          }, {
+            "jboss.web.deployment:war=/TomcatServletExamples" : "/TomcatServletExamples"
           }, {
             "jboss.web.deployment:war=/invoker" : "/invoker"
           }, {
@@ -324,19 +326,19 @@
             "java.specification.version" : "1.7"
           },
           "disk_usage" : {
-            "log_disk_usage" : "69%",
-            "engine_disk_usage" : "69%"
+            "log_disk_usage" : "66%",
+            "engine_disk_usage" : "66%"
           },
           "server_log_file_inspection" : {
-            "Closing a connection for you" : "1",
-            "Maximum number of threads" : "2",
-            "Too many open files" : "2",
+            "Closing a connection for you" : "0",
+            "Maximum number of threads" : "0",
+            "Too many open files" : "0",
             "OutOfMemoryError" : "0",
-            "Unable to get managed connection" : "2"
+            "Unable to get managed connection" : "0"
           },
           "gc_log_file_inspection" : {
-            "MaxGcDuration" : "0.985825",
-            "FullGcAvgInterval" : "180.6988"
+            "MaxGcDuration" : "0.219348",
+            "FullGcAvgInterval" : "8.078"
           }
         }
       } ],

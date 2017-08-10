@@ -1,0 +1,705 @@
+2017.06.22 14:17:05 [INFO ] ReportUtil: Load Properties:config/properties 
+2017.06.22 14:17:05 [DEBUG] ReportUtil: Properties:{server_log_file_error_string.0=OutOfMemoryError:Heap memory 부족, display_default_datasource=no, server_log_file_date_expr=server.log.2017-01-??, gc_log_file_max_total_size=104857600, gc_log_dir=gclog, gc_log_file_date_expr=gc.log, server_log_file_inspection=yes, server_log_file_max_total_size=104857600, operation_mode=report, server_log_file_error_string.4=Too many open files:OS File생성 최대치 도달, server_log_file_error_string.3=Closing a connection for you:DB Connection Leak 발생, gc_log_file_inspection=yes, server_log_file_error_string.2=Maximum number of threads:Thread생성 최대치 도달, server_log_file_error_string.1=Unable to get managed connection:JDBC Connection Error} 
+2017.06.22 14:17:05 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:05 [INFO ] ReportUtil: Testing Target Hosts... 
+2017.06.22 14:17:05 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:05 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:05 [INFO ] ReportUtil: service name: cloud-portal 
+2017.06.22 14:17:05 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:05 [INFO ] ReportUtil:   host: 127.0.0.1 
+2017.06.22 14:17:05 [INFO ] ReportUtil:     Check directory : $JBOSS_HOME 
+2017.06.22 14:17:06 [INFO ] JschUtil: command : if test -d /sw/jboss/jboss-eap-5.2; then echo exist; fi 
+2017.06.22 14:17:06 [DEBUG] JschUtil: exist
+ 
+2017.06.22 14:17:06 [INFO ] ReportUtil: result:exist 
+2017.06.22 14:17:06 [INFO ] ReportUtil:       /sw/jboss/jboss-eap-5.2: Exists 
+2017.06.22 14:17:06 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:06 [INFO ] ReportUtil: Getting Simple Data From Instance... 
+2017.06.22 14:17:06 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:06 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux   get 'jboss.system:type=ServerConfig' HomeDir ServerHomeDir ServerLogDir 
+2017.06.22 14:17:07 [DEBUG] JschUtil: HomeDir=/sw/jboss/jboss-eap-5.2/jboss-as
+ServerHomeDir=/sw/jboss/jboss-eap-5.2/domains/prod1
+ServerLogDir=/sw/jboss/jboss-eap-5.2/domains/prod1/log
+ 
+2017.06.22 14:17:07 [DEBUG] ReportUtil: HomeDir=/sw/jboss/jboss-eap-5.2/jboss-as
+ServerHomeDir=/sw/jboss/jboss-eap-5.2/domains/prod1
+ServerLogDir=/sw/jboss/jboss-eap-5.2/domains/prod1/log 
+2017.06.22 14:17:07 [INFO ] ReportUtil: Inspecting Jboss Server Log: server.log.2017-01-?? 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: Checking Server Log Size From Instance... 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log;du -bc server.log.2017-01-?? | tail -n 1 | awk '{print $1}' 
+2017.06.22 14:17:07 [DEBUG] JschUtil: 22563
+ 
+2017.06.22 14:17:07 [DEBUG] ReportUtil: File Size: 22563 
+2017.06.22 14:17:07 [INFO ] ReportUtil: Inspecting Jboss GC Log: gc.log 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: Checking GC Log Data From Instance... 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog;du -bc gc.log | tail -n 1 | awk '{print $1}' 
+2017.06.22 14:17:07 [DEBUG] JschUtil: 1968
+ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: Testing EAP Target Hosts Completed 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: Getting Result Data From Target Hosts... 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: service name: cloud-portal 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil:   host: 127.0.0.1 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:07 [INFO ] ReportUtil: Getting Hostname... 
+2017.06.22 14:17:07 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:08 [INFO ] JschUtil: command : hostname 
+2017.06.22 14:17:08 [DEBUG] JschUtil: hsyang-pc
+ 
+2017.06.22 14:17:08 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:08 [INFO ] ReportUtil: Getting OSInfo... 
+2017.06.22 14:17:08 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:08 [INFO ] JschUtil: command : uname -is 
+2017.06.22 14:17:08 [DEBUG] JschUtil: Linux x86_64
+ 
+2017.06.22 14:17:08 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:08 [INFO ] ReportUtil: Getting VmArguments... 
+2017.06.22 14:17:08 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:08 [INFO ] JschUtil: command : /bin/ps -ef | grep java | grep "server=prod1 " | grep -v grep 
+2017.06.22 14:17:08 [DEBUG] JschUtil: hsyang   18222 18179 15 14:06 pts/4    00:01:38 /usr/java/jdk1.7.0_79/bin/java -Dprogram.name=run.sh -server -Dserver=prod1 -Djboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains -Djboss.server.base.url=file:///sw/jboss/jboss-eap-5.2/domains -Djboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/log -Djboss.service.binding.set=ports-default -Djboss.server.log.threshold=INFO -Dfile.encoding=utf-8 -Djboss.jvmRoute=prod1 -Djboss.partition.name=mygroup1 -Djboss.partition.udpGroup=228.2.2.9 -Djboss.jgroups.udp.mcast_port=44559 -Djboss.messaging.ServerPeerID=1 -Xms512m -Xmx812m -XX:PermSize=128m -XX:MaxPermSize=256m -Xss256k -verbose:gc -Xloggc:/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/gc.log -XX:+PrintGCTimeStamps -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/java_pid.hprof -XX:+UseConcMarkSweepGC -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Dsun.lang.ClassLoader.allowArraySyntax=true -Djava.net.preferIPv4Stack=true -Djava.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed -classpath /sw/jboss/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.7.0_79/lib/tools.jar org.jboss.Main -c prod1 -b 0.0.0.0
+ 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Dprogram.name=run.sh 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-server 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Dserver=prod1 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.server.base.url=file:///sw/jboss/jboss-eap-5.2/domains 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/log 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.service.binding.set=ports-default 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.server.log.threshold=INFO 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Dfile.encoding=utf-8 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.jvmRoute=prod1 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.partition.name=mygroup1 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.partition.udpGroup=228.2.2.9 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.jgroups.udp.mcast_port=44559 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djboss.messaging.ServerPeerID=1 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Xms512m 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Xmx812m 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-XX:PermSize=128m 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-XX:MaxPermSize=256m 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Xss256k 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-verbose:gc 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Xloggc:/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/gc.log 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-XX:+PrintGCTimeStamps 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-XX:+HeapDumpOnOutOfMemoryError 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-XX:HeapDumpPath=/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/java_pid.hprof 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-XX:+UseConcMarkSweepGC 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Dorg.jboss.resolver.warning=true 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djava.net.preferIPv4Stack=true 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Dsun.rmi.dgc.client.gcInterval=3600000 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Dsun.rmi.dgc.server.gcInterval=3600000 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Dsun.lang.ClassLoader.allowArraySyntax=true 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djava.net.preferIPv4Stack=true 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-Djava.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-classpath 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-c 
+2017.06.22 14:17:08 [INFO ] ReportUtil: attribute:-b 
+2017.06.22 14:17:08 [INFO ] ReportUtil: InputArguments:[-Dprogram.name=run.sh, -server, -Dserver=prod1, -Djboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains, -Djboss.server.base.url=file:///sw/jboss/jboss-eap-5.2/domains, -Djboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/log, -Djboss.service.binding.set=ports-default, -Djboss.server.log.threshold=INFO, -Dfile.encoding=utf-8, -Djboss.jvmRoute=prod1, -Djboss.partition.name=mygroup1, -Djboss.partition.udpGroup=228.2.2.9, -Djboss.jgroups.udp.mcast_port=44559, -Djboss.messaging.ServerPeerID=1, -Xms512m, -Xmx812m, -XX:PermSize=128m, -XX:MaxPermSize=256m, -Xss256k, -verbose:gc, -Xloggc:/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/gc.log, -XX:+PrintGCTimeStamps, -XX:+HeapDumpOnOutOfMemoryError, -XX:HeapDumpPath=/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/java_pid.hprof, -XX:+UseConcMarkSweepGC, -Dorg.jboss.resolver.warning=true, -Djava.net.preferIPv4Stack=true, -Dsun.rmi.dgc.client.gcInterval=3600000, -Dsun.rmi.dgc.server.gcInterval=3600000, -Dsun.lang.ClassLoader.allowArraySyntax=true, -Djava.net.preferIPv4Stack=true, -Djava.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed, -classpath, -c, -b 0.0.0.0] 
+2017.06.22 14:17:08 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:08 [INFO ] ReportUtil: Getting Simple Data From Instance... 
+2017.06.22 14:17:08 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:08 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux   get 'jboss.system:type=Server' VersionName VersionNumber 
+2017.06.22 14:17:09 [DEBUG] JschUtil: VersionName=EAP
+VersionNumber=5.2.0.
+ 
+2017.06.22 14:17:09 [DEBUG] ReportUtil: VersionName=EAP
+VersionNumber=5.2.0. 
+2017.06.22 14:17:09 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:09 [INFO ] ReportUtil: Getting Simple Data From Instance... 
+2017.06.22 14:17:09 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:09 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux   get 'jboss.system:type=ServerInfo' JavaVersion 
+2017.06.22 14:17:10 [DEBUG] JschUtil: JavaVersion=1.7.0_79
+ 
+2017.06.22 14:17:10 [DEBUG] ReportUtil: JavaVersion=1.7.0_79 
+2017.06.22 14:17:10 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:10 [INFO ] ReportUtil: Getting Simple Data From Instance... 
+2017.06.22 14:17:10 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:10 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux   get 'jboss.system:type=ServerConfig' HomeDir ServerHomeDir ServerLogDir 
+2017.06.22 14:17:12 [DEBUG] JschUtil: HomeDir=/sw/jboss/jboss-eap-5.2/jboss-as
+ServerHomeDir=/sw/jboss/jboss-eap-5.2/domains/prod1
+ServerLogDir=/sw/jboss/jboss-eap-5.2/domains/prod1/log
+ 
+2017.06.22 14:17:12 [DEBUG] ReportUtil: HomeDir=/sw/jboss/jboss-eap-5.2/jboss-as
+ServerHomeDir=/sw/jboss/jboss-eap-5.2/domains/prod1
+ServerLogDir=/sw/jboss/jboss-eap-5.2/domains/prod1/log 
+2017.06.22 14:17:12 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:12 [INFO ] ReportUtil: Getting Simple Data From Instance... 
+2017.06.22 14:17:12 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:12 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux   get 'jboss.system:type=ServerInfo' MaxMemory TotalMemory FreeMemory 
+2017.06.22 14:17:13 [DEBUG] JschUtil: MaxMemory=823066624
+TotalMemory=647385088
+FreeMemory=286233048
+ 
+2017.06.22 14:17:13 [DEBUG] ReportUtil: MaxMemory=823066624
+TotalMemory=647385088
+FreeMemory=286233048 
+2017.06.22 14:17:13 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:13 [INFO ] ReportUtil: Getting MemoryPools From Instance... 
+2017.06.22 14:17:13 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:13 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux   invoke jboss.system:type=ServerInfo listMemoryPools false 
+2017.06.22 14:17:14 [DEBUG] JschUtil: <b>Total Memory Pools:</b> 5<blockquote><b>Pool: Code Cache</b> (Non-heap memory)<blockquote>Peak Usage    : init:2555904, used:6998400, committed:7340032, max:50331648<br/>Current Usage : init:2555904, used:6570816, committed:7340032, max:50331648</blockquote><br/><b>Pool: Par Eden Space</b> (Heap memory)<blockquote>Peak Usage    : init:227016704, used:227016704, committed:227016704, max:227016704<br/>Current Usage : init:227016704, used:97967768, committed:227016704, max:227016704</blockquote><br/><b>Pool: Par Survivor Space</b> (Heap memory)<blockquote>Peak Usage    : init:28377088, used:28377088, committed:28377088, max:28377088<br/>Current Usage : init:28377088, used:28377088, committed:28377088, max:28377088</blockquote><br/><b>Pool: CMS Old Gen</b> (Heap memory)<blockquote>Peak Usage    : init:253100032, used:268220160, committed:391991296, max:567672832<br/>Current Usage : init:253100032, used:235193800, committed:391991296, max:567672832</blockquote><br/><b>Pool: CMS Perm Gen</b> (Non-heap memory)<blockquote>Peak Usage    : init:134217728, used:79207648, committed:134217728, max:268435456<br/>Current Usage : init:134217728, used:79207648, committed:134217728, max:268435456</blockquote><br/>
+ 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Total Memory Pools: 5 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Pool: Code Cache (Non-heap memory) 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PoolName:CodeCache 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntry:init:2555904,used:6998400,committed:7340032,max:50331648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:init:2555904 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:used:6998400 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:committed:7340032 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:max:50331648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntry:init:2555904,used:6570816,committed:7340032,max:50331648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:init:2555904 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:used:6570816 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:committed:7340032 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:max:50331648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Peak Usage    : init:2555904, used:6998400, committed:7340032, max:50331648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Current Usage : init:2555904, used:6570816, committed:7340032, max:50331648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Pool: Par Eden Space (Heap memory) 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PoolName:ParEdenSpace 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntry:init:227016704,used:227016704,committed:227016704,max:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:init:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:used:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:committed:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:max:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntry:init:227016704,used:97967768,committed:227016704,max:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:init:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:used:97967768 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:committed:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:max:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Peak Usage    : init:227016704, used:227016704, committed:227016704, max:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Current Usage : init:227016704, used:97967768, committed:227016704, max:227016704 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Pool: Par Survivor Space (Heap memory) 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PoolName:ParSurvivorSpace 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntry:init:28377088,used:28377088,committed:28377088,max:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:init:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:used:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:committed:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:max:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntry:init:28377088,used:28377088,committed:28377088,max:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:init:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:used:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:committed:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:max:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Peak Usage    : init:28377088, used:28377088, committed:28377088, max:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Current Usage : init:28377088, used:28377088, committed:28377088, max:28377088 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Pool: CMS Old Gen (Heap memory) 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PoolName:CMSOldGen 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntry:init:253100032,used:268220160,committed:391991296,max:567672832 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:init:253100032 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:used:268220160 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:committed:391991296 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:max:567672832 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntry:init:253100032,used:235193800,committed:391991296,max:567672832 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:init:253100032 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:used:235193800 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:committed:391991296 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:max:567672832 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Peak Usage    : init:253100032, used:268220160, committed:391991296, max:567672832 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Current Usage : init:253100032, used:235193800, committed:391991296, max:567672832 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Pool: CMS Perm Gen (Non-heap memory) 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PoolName:CMSPermGen 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntry:init:134217728,used:79207648,committed:134217728,max:268435456 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:init:134217728 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:used:79207648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:committed:134217728 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: PeakUsageEntryData:max:268435456 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntry:init:134217728,used:79207648,committed:134217728,max:268435456 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:init:134217728 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:used:79207648 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:committed:134217728 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: CurrentUsageEntryData:max:268435456 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Peak Usage    : init:134217728, used:79207648, committed:134217728, max:268435456 
+2017.06.22 14:17:14 [DEBUG] ReportUtil: attribute_arr:Current Usage : init:134217728, used:79207648, committed:134217728, max:268435456 
+2017.06.22 14:17:14 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:14 [INFO ] ReportUtil: Getting Datasources Data From Instance... 
+2017.06.22 14:17:14 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:14 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  query 'jboss.jca:service=ManagedConnectionPool,*' 
+2017.06.22 14:17:15 [DEBUG] JschUtil: jboss.jca:service=ManagedConnectionPool,name=mysqlds
+jboss.jca:service=ManagedConnectionPool,name=JmsXA
+jboss.jca:service=ManagedConnectionPool,name=DefaultDS
+ 
+2017.06.22 14:17:15 [DEBUG] ReportUtil: jboss.jca:service=ManagedConnectionPool,name=mysqlds
+jboss.jca:service=ManagedConnectionPool,name=JmsXA
+jboss.jca:service=ManagedConnectionPool,name=DefaultDS 
+2017.06.22 14:17:15 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  get 'jboss.jca:service=ManagedConnectionPool,name=mysqlds' MaxConnectionsInUseCount InUseConnectionCount ConnectionCount MaxSize 
+2017.06.22 14:17:17 [DEBUG] JschUtil: MaxConnectionsInUseCount=0
+InUseConnectionCount=0
+ConnectionCount=0
+MaxSize=30
+ 
+2017.06.22 14:17:17 [INFO ] ReportUtil: MaxConnectionsInUseCount=0
+InUseConnectionCount=0
+ConnectionCount=0
+MaxSize=30 
+2017.06.22 14:17:17 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  get 'jboss.jca:service=ManagedConnectionPool,name=JmsXA' MaxConnectionsInUseCount InUseConnectionCount ConnectionCount MaxSize 
+2017.06.22 14:17:18 [DEBUG] JschUtil: MaxConnectionsInUseCount=0
+InUseConnectionCount=0
+ConnectionCount=0
+MaxSize=20
+ 
+2017.06.22 14:17:18 [INFO ] ReportUtil: MaxConnectionsInUseCount=0
+InUseConnectionCount=0
+ConnectionCount=0
+MaxSize=20 
+2017.06.22 14:17:18 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  get 'jboss.jca:service=ManagedConnectionPool,name=DefaultDS' MaxConnectionsInUseCount InUseConnectionCount ConnectionCount MaxSize 
+2017.06.22 14:17:19 [DEBUG] JschUtil: MaxConnectionsInUseCount=1
+InUseConnectionCount=0
+ConnectionCount=5
+MaxSize=20
+ 
+2017.06.22 14:17:19 [INFO ] ReportUtil: MaxConnectionsInUseCount=1
+InUseConnectionCount=0
+ConnectionCount=5
+MaxSize=20 
+2017.06.22 14:17:19 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:19 [INFO ] ReportUtil: Getting Threadpools Data From Instance... 
+2017.06.22 14:17:19 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:19 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  query 'jboss.web:type=ThreadPool,*' 
+2017.06.22 14:17:20 [DEBUG] JschUtil: jboss.web:type=ThreadPool,name=ajp-0.0.0.0-8009
+jboss.web:type=ThreadPool,name=http-0.0.0.0-8080
+jboss.web:type=ThreadPool,name=http-0.0.0.0-8443
+ 
+2017.06.22 14:17:20 [DEBUG] ReportUtil: jboss.web:type=ThreadPool,name=ajp-0.0.0.0-8009
+jboss.web:type=ThreadPool,name=http-0.0.0.0-8080
+jboss.web:type=ThreadPool,name=http-0.0.0.0-8443 
+2017.06.22 14:17:20 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  get 'jboss.web:type=ThreadPool,name=ajp-0.0.0.0-8009' currentThreadsBusy currentThreadCount maxThreads 
+2017.06.22 14:17:21 [DEBUG] JschUtil: currentThreadsBusy=0
+currentThreadCount=0
+maxThreads=500
+ 
+2017.06.22 14:17:21 [DEBUG] ReportUtil: ThreadPool: currentThreadsBusy=0
+currentThreadCount=0
+maxThreads=500 
+2017.06.22 14:17:21 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  get 'jboss.web:type=ThreadPool,name=http-0.0.0.0-8080' currentThreadsBusy currentThreadCount maxThreads 
+2017.06.22 14:17:23 [DEBUG] JschUtil: currentThreadsBusy=0
+currentThreadCount=0
+maxThreads=500
+ 
+2017.06.22 14:17:23 [DEBUG] ReportUtil: ThreadPool: currentThreadsBusy=0
+currentThreadCount=0
+maxThreads=500 
+2017.06.22 14:17:23 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  get 'jboss.web:type=ThreadPool,name=http-0.0.0.0-8443' currentThreadsBusy currentThreadCount maxThreads 
+2017.06.22 14:17:24 [DEBUG] JschUtil: currentThreadsBusy=0
+currentThreadCount=0
+maxThreads=2048
+ 
+2017.06.22 14:17:24 [DEBUG] ReportUtil: ThreadPool: currentThreadsBusy=0
+currentThreadCount=0
+maxThreads=2048 
+2017.06.22 14:17:24 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:24 [INFO ] ReportUtil: Getting Deployments Data From Instance... 
+2017.06.22 14:17:24 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:24 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux  query 'jboss.web.deployment:*' 
+2017.06.22 14:17:25 [DEBUG] JschUtil: jboss.web.deployment:war=/ROOT
+jboss.web.deployment:war=/spis
+jboss.web.deployment:war=/ibatis
+jboss.web.deployment:war=/web-console
+jboss.web.deployment:war=/jbossws
+jboss.web.deployment:war=/simple
+jboss.web.deployment:war=/admin-console
+jboss.web.deployment:war=/jmx-console
+jboss.web.deployment:war=/spring-ibatis
+jboss.web.deployment:war=/TomcatServletExamples
+jboss.web.deployment:war=/invoker
+jboss.web.deployment:war=/juddi
+ 
+2017.06.22 14:17:25 [DEBUG] ReportUtil: jboss.web.deployment:war=/ROOT
+jboss.web.deployment:war=/spis
+jboss.web.deployment:war=/ibatis
+jboss.web.deployment:war=/web-console
+jboss.web.deployment:war=/jbossws
+jboss.web.deployment:war=/simple
+jboss.web.deployment:war=/admin-console
+jboss.web.deployment:war=/jmx-console
+jboss.web.deployment:war=/spring-ibatis
+jboss.web.deployment:war=/TomcatServletExamples
+jboss.web.deployment:war=/invoker
+jboss.web.deployment:war=/juddi 
+2017.06.22 14:17:25 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:25 [INFO ] ReportUtil: Getting Simple Data From Instance... 
+2017.06.22 14:17:25 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:25 [INFO ] JschUtil: command : export JAVA_HOME=/usr/java/jdk1.7.0_79;export PATH=$JAVA_HOME/bin:$PATH;export JBOSS_HOME=/sw/jboss/jboss-eap-5.2/jboss-as;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/client/jbossall-client.jar ;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/client/getopt.jar ;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/client/log4j.jar ;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/lib/log4j.jar ;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/lib/jboss-jmx.jar ;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/lib/dom4j.jar ;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/lib/jboss-system-jmx.jar ;JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/lib/jboss-common-beans.jar ;export JBOSS_CLASSPATH=$JBOSS_CLASSPATH:$JBOSS_HOME/common/lib/properties-plugin.jar ;/sw/jboss/jboss-eap-5.2/jboss-as/bin/twiddle.sh -s jnp://${ip}:1099 --user=admin --password=rplinux   invoke jboss:name=SystemProperties,type=Service showAll 
+2017.06.22 14:17:26 [DEBUG] JschUtil: <table><tr><td align="left"><b>PROPERTIES_FILE</b></td><td align="left">tsmx.properties</td></tr>
+<tr><td align="left"><b>TSMX_VERSION</b></td><td align="left">unknown</td></tr>
+<tr><td align="left"><b>awt.toolkit</b></td><td align="left">sun.awt.X11.XToolkit</td></tr>
+<tr><td align="left"><b>bind.address</b></td><td align="left">hsyang-pc</td></tr>
+<tr><td align="left"><b>catalina.ext.dirs</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1/lib</td></tr>
+<tr><td align="left"><b>catalina.home</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1</td></tr>
+<tr><td align="left"><b>com.arjuna.ats.arjuna.objectstore.objectStoreDir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1/data/tx-object-store</td></tr>
+<tr><td align="left"><b>com.arjuna.ats.jta.lastResourceOptimisationInterface</b></td><td align="left">org.jboss.tm.LastResource</td></tr>
+<tr><td align="left"><b>com.arjuna.ats.tsmx.agentimpl</b></td><td align="left">com.arjuna.ats.internal.jbossatx.agent.LocalJBossAgentImpl</td></tr>
+<tr><td align="left"><b>com.arjuna.common.util.logger</b></td><td align="left">log4j_releveler</td></tr>
+<tr><td align="left"><b>com.arjuna.common.util.logging.DebugLevel</b></td><td align="left">0x00000000</td></tr>
+<tr><td align="left"><b>com.arjuna.common.util.logging.FacilityLevel</b></td><td align="left">0xffffffff</td></tr>
+<tr><td align="left"><b>com.arjuna.common.util.logging.VisibilityLevel</b></td><td align="left">0xffffffff</td></tr>
+<tr><td align="left"><b>file.encoding</b></td><td align="left">utf-8</td></tr>
+<tr><td align="left"><b>file.encoding.pkg</b></td><td align="left">sun.io</td></tr>
+<tr><td align="left"><b>file.separator</b></td><td align="left">/</td></tr>
+<tr><td align="left"><b>hornetq.backup1.remoting.netty.batch.port</b></td><td align="left">5475</td></tr>
+<tr><td align="left"><b>hornetq.backup1.remoting.netty.port</b></td><td align="left">5465</td></tr>
+<tr><td align="left"><b>hornetq.backup1.remoting.netty.ssl.port</b></td><td align="left">5466</td></tr>
+<tr><td align="left"><b>hornetq.remoting.netty.batch.port</b></td><td align="left">5455</td></tr>
+<tr><td align="left"><b>hornetq.remoting.netty.port</b></td><td align="left">5445</td></tr>
+<tr><td align="left"><b>hornetq.remoting.netty.ssl.port</b></td><td align="left">5446</td></tr>
+<tr><td align="left"><b>java.awt.graphicsenv</b></td><td align="left">sun.awt.X11GraphicsEnvironment</td></tr>
+<tr><td align="left"><b>java.awt.printerjob</b></td><td align="left">sun.print.PSPrinterJob</td></tr>
+<tr><td align="left"><b>java.class.path</b></td><td align="left">/sw/jboss/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.7.0_79/lib/tools.jar</td></tr>
+<tr><td align="left"><b>java.class.version</b></td><td align="left">51.0</td></tr>
+<tr><td align="left"><b>java.endorsed.dirs</b></td><td align="left">/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed</td></tr>
+<tr><td align="left"><b>java.ext.dirs</b></td><td align="left">/usr/java/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext</td></tr>
+<tr><td align="left"><b>java.home</b></td><td align="left">/usr/java/jdk1.7.0_79/jre</td></tr>
+<tr><td align="left"><b>java.io.tmpdir</b></td><td align="left">/tmp</td></tr>
+<tr><td align="left"><b>java.library.path</b></td><td align="left">:/sw/jboss/jboss-eap-5.2/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib</td></tr>
+<tr><td align="left"><b>java.naming.factory.initial</b></td><td align="left">org.jboss.iiop.naming.ORBInitialContextFactory</td></tr>
+<tr><td align="left"><b>java.naming.factory.url.pkgs</b></td><td align="left">org.jboss.naming:org.jnp.interfaces</td></tr>
+<tr><td align="left"><b>java.net.preferIPv4Stack</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>java.protocol.handler.pkgs</b></td><td align="left">org.jboss.net.protocol|org.jboss.virtual.protocol</td></tr>
+<tr><td align="left"><b>java.rmi.server.RMIClassLoaderSpi</b></td><td align="left">org.jboss.system.JBossRMIClassLoader</td></tr>
+<tr><td align="left"><b>java.rmi.server.codebase</b></td><td align="left">http://hsyang-pc:8083/</td></tr>
+<tr><td align="left"><b>java.rmi.server.hostname</b></td><td align="left">hsyang-pc</td></tr>
+<tr><td align="left"><b>java.runtime.name</b></td><td align="left">Java(TM) SE Runtime Environment</td></tr>
+<tr><td align="left"><b>java.runtime.version</b></td><td align="left">1.7.0_79-b15</td></tr>
+<tr><td align="left"><b>java.specification.name</b></td><td align="left">Java Platform API Specification</td></tr>
+<tr><td align="left"><b>java.specification.vendor</b></td><td align="left">Oracle Corporation</td></tr>
+<tr><td align="left"><b>java.specification.version</b></td><td align="left">1.7</td></tr>
+<tr><td align="left"><b>java.util.logging.manager</b></td><td align="left">org.jboss.logmanager.LogManager</td></tr>
+<tr><td align="left"><b>java.vendor</b></td><td align="left">Oracle Corporation</td></tr>
+<tr><td align="left"><b>java.vendor.url</b></td><td align="left">http://java.oracle.com/</td></tr>
+<tr><td align="left"><b>java.vendor.url.bug</b></td><td align="left">http://bugreport.sun.com/bugreport/</td></tr>
+<tr><td align="left"><b>java.version</b></td><td align="left">1.7.0_79</td></tr>
+<tr><td align="left"><b>java.vm.info</b></td><td align="left">mixed mode</td></tr>
+<tr><td align="left"><b>java.vm.name</b></td><td align="left">Java HotSpot(TM) 64-Bit Server VM</td></tr>
+<tr><td align="left"><b>java.vm.specification.name</b></td><td align="left">Java Virtual Machine Specification</td></tr>
+<tr><td align="left"><b>java.vm.specification.vendor</b></td><td align="left">Oracle Corporation</td></tr>
+<tr><td align="left"><b>java.vm.specification.version</b></td><td align="left">1.7</td></tr>
+<tr><td align="left"><b>java.vm.vendor</b></td><td align="left">Oracle Corporation</td></tr>
+<tr><td align="left"><b>java.vm.version</b></td><td align="left">24.79-b02</td></tr>
+<tr><td align="left"><b>javax.management.builder.initial</b></td><td align="left">org.jboss.mx.server.MBeanServerBuilderImpl</td></tr>
+<tr><td align="left"><b>jboss.bind.address</b></td><td align="left">0.0.0.0</td></tr>
+<tr><td align="left"><b>jboss.common.base.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/jboss-as/common/</td></tr>
+<tr><td align="left"><b>jboss.common.lib.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/jboss-as/common/lib/</td></tr>
+<tr><td align="left"><b>jboss.home.dir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/jboss-as</td></tr>
+<tr><td align="left"><b>jboss.home.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/jboss-as/</td></tr>
+<tr><td align="left"><b>jboss.jgroups.diagnostics_addr</b></td><td align="left">224.0.75.75</td></tr>
+<tr><td align="left"><b>jboss.jgroups.diagnostics_port</b></td><td align="left">7500</td></tr>
+<tr><td align="left"><b>jboss.jgroups.jbm_control.fd_sock_port</b></td><td align="left">53200</td></tr>
+<tr><td align="left"><b>jboss.jgroups.jbm_data.fd_sock_port</b></td><td align="left">57900</td></tr>
+<tr><td align="left"><b>jboss.jgroups.jbm_data.mping_mcast_addr</b></td><td align="left">228.2.2.9</td></tr>
+<tr><td align="left"><b>jboss.jgroups.tcp.fd_sock_port</b></td><td align="left">57600</td></tr>
+<tr><td align="left"><b>jboss.jgroups.tcp.mping_mcast_addr</b></td><td align="left">228.2.2.9</td></tr>
+<tr><td align="left"><b>jboss.jgroups.tcp.tcp_port</b></td><td align="left">7600</td></tr>
+<tr><td align="left"><b>jboss.jgroups.tcp_sync.fd_sock_port</b></td><td align="left">57650</td></tr>
+<tr><td align="left"><b>jboss.jgroups.tcp_sync.mping_mcast_addr</b></td><td align="left">228.2.2.9</td></tr>
+<tr><td align="left"><b>jboss.jgroups.tcp_sync.mping_mcast_port</b></td><td align="left">45701</td></tr>
+<tr><td align="left"><b>jboss.jgroups.tcp_sync.tcp_port</b></td><td align="left">7650</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp.bind_port</b></td><td align="left">55200</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp.fd_sock_port</b></td><td align="left">54200</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp.mcast_addr</b></td><td align="left">228.11.11.11</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp.mcast_port</b></td><td align="left">44559</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_async.bind_port</b></td><td align="left">55225</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_async.fd_sock_port</b></td><td align="left">54225</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_async.mcast_addr</b></td><td align="left">228.11.11.11</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_async.mcast_port</b></td><td align="left">45689</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_sync.bind_port</b></td><td align="left">55250</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_sync.fd_sock_port</b></td><td align="left">54250</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_sync.mcast_addr</b></td><td align="left">229.11.11.11</td></tr>
+<tr><td align="left"><b>jboss.jgroups.udp_sync.mcast_port</b></td><td align="left">45699</td></tr>
+<tr><td align="left"><b>jboss.jvmRoute</b></td><td align="left">prod1</td></tr>
+<tr><td align="left"><b>jboss.lib.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/jboss-as/lib/</td></tr>
+<tr><td align="left"><b>jboss.messaging.ServerPeerID</b></td><td align="left">1</td></tr>
+<tr><td align="left"><b>jboss.messaging.connector.bisocket.port</b></td><td align="left">4457</td></tr>
+<tr><td align="left"><b>jboss.messaging.datachanneltcpport</b></td><td align="left">7900</td></tr>
+<tr><td align="left"><b>jboss.messaging.datachanneludpport</b></td><td align="left">45710</td></tr>
+<tr><td align="left"><b>jboss.partition.name</b></td><td align="left">mygroup1</td></tr>
+<tr><td align="left"><b>jboss.partition.udpGroup</b></td><td align="left">228.2.2.9</td></tr>
+<tr><td align="left"><b>jboss.remoting.version</b></td><td align="left">22</td></tr>
+<tr><td align="left"><b>jboss.server.base.dir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains</td></tr>
+<tr><td align="left"><b>jboss.server.base.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/domains/</td></tr>
+<tr><td align="left"><b>jboss.server.config.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/domains/prod1/conf/</td></tr>
+<tr><td align="left"><b>jboss.server.data.dir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1/data</td></tr>
+<tr><td align="left"><b>jboss.server.home.dir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1</td></tr>
+<tr><td align="left"><b>jboss.server.home.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/domains/prod1/</td></tr>
+<tr><td align="left"><b>jboss.server.lib.url</b></td><td align="left">file:/sw/jboss/jboss-eap-5.2/domains/prod1/lib/</td></tr>
+<tr><td align="left"><b>jboss.server.log.dir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1/log</td></tr>
+<tr><td align="left"><b>jboss.server.log.threshold</b></td><td align="left">INFO</td></tr>
+<tr><td align="left"><b>jboss.server.name</b></td><td align="left">prod1</td></tr>
+<tr><td align="left"><b>jboss.server.temp.dir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1/tmp</td></tr>
+<tr><td align="left"><b>jboss.service.binding.set</b></td><td align="left">ports-default</td></tr>
+<tr><td align="left"><b>jboss.vfs.forceCopy</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>jbossmx.loader.repository.class</b></td><td align="left">org.jboss.mx.loading.UnifiedLoaderRepository3</td></tr>
+<tr><td align="left"><b>jgroups.bind_addr</b></td><td align="left">hsyang-pc</td></tr>
+<tr><td align="left"><b>jgroups.tcp.mping_mcast_port</b></td><td align="left">45700</td></tr>
+<tr><td align="left"><b>line.separator</b></td><td align="left">
+</td></tr>
+<tr><td align="left"><b>org.apache.catalina.STRICT_SERVLET_COMPLIANCE</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>org.apache.catalina.connector.Request.SESSION_ID_CHECK</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>org.apache.catalina.core.StandardHost.autoDeploy</b></td><td align="left">false</td></tr>
+<tr><td align="left"><b>org.apache.catalina.core.StandardHost.configClass</b></td><td align="left">org.jboss.web.tomcat.service.deployers.JBossContextConfig</td></tr>
+<tr><td align="left"><b>org.apache.catalina.core.StandardHost.deployOnStartup</b></td><td align="left">false</td></tr>
+<tr><td align="left"><b>org.apache.catalina.core.StandardHost.deployXML</b></td><td align="left">false</td></tr>
+<tr><td align="left"><b>org.apache.catalina.core.StandardHost.startChildren</b></td><td align="left">false</td></tr>
+<tr><td align="left"><b>org.apache.catalina.core.StandardService.DELAY_CONNECTOR_STARTUP</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>org.apache.commons.logging.Log</b></td><td align="left">org.apache.commons.logging.impl.Log4JLogger</td></tr>
+<tr><td align="left"><b>org.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>org.jboss.ORBSingletonDelegate</b></td><td align="left">org.jacorb.orb.ORBSingleton</td></tr>
+<tr><td align="left"><b>org.jboss.resolver.warning</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>org.omg.CORBA.ORBClass</b></td><td align="left">org.jacorb.orb.ORB</td></tr>
+<tr><td align="left"><b>org.omg.CORBA.ORBSingletonClass</b></td><td align="left">org.jboss.system.ORBSingleton</td></tr>
+<tr><td align="left"><b>os.arch</b></td><td align="left">amd64</td></tr>
+<tr><td align="left"><b>os.name</b></td><td align="left">Linux</td></tr>
+<tr><td align="left"><b>os.version</b></td><td align="left">3.19.0-30-generic</td></tr>
+<tr><td align="left"><b>path.separator</b></td><td align="left">:</td></tr>
+<tr><td align="left"><b>program.name</b></td><td align="left">run.sh</td></tr>
+<tr><td align="left"><b>server</b></td><td align="left">prod1</td></tr>
+<tr><td align="left"><b>sun.arch.data.model</b></td><td align="left">64</td></tr>
+<tr><td align="left"><b>sun.boot.class.path</b></td><td align="left">/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/resolver.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jbossws-native-factories.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxb-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xalan.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/serializer.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxws-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xercesImpl.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/activation.jar:/usr/java/jdk1.7.0_79/jre/lib/resources.jar:/usr/java/jdk1.7.0_79/jre/lib/rt.jar:/usr/java/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/java/jdk1.7.0_79/jre/lib/jsse.jar:/usr/java/jdk1.7.0_79/jre/lib/jce.jar:/usr/java/jdk1.7.0_79/jre/lib/charsets.jar:/usr/java/jdk1.7.0_79/jre/lib/jfr.jar:/usr/java/jdk1.7.0_79/jre/classes</td></tr>
+<tr><td align="left"><b>sun.boot.library.path</b></td><td align="left">/usr/java/jdk1.7.0_79/jre/lib/amd64</td></tr>
+<tr><td align="left"><b>sun.cpu.endian</b></td><td align="left">little</td></tr>
+<tr><td align="left"><b>sun.cpu.isalist</b></td><td align="left"></td></tr>
+<tr><td align="left"><b>sun.desktop</b></td><td align="left">gnome</td></tr>
+<tr><td align="left"><b>sun.font.fontmanager</b></td><td align="left">sun.awt.X11FontManager</td></tr>
+<tr><td align="left"><b>sun.io.unicode.encoding</b></td><td align="left">UnicodeLittle</td></tr>
+<tr><td align="left"><b>sun.java.command</b></td><td align="left">org.jboss.Main -c prod1 -b 0.0.0.0</td></tr>
+<tr><td align="left"><b>sun.java.launcher</b></td><td align="left">SUN_STANDARD</td></tr>
+<tr><td align="left"><b>sun.jnu.encoding</b></td><td align="left">UTF-8</td></tr>
+<tr><td align="left"><b>sun.lang.ClassLoader.allowArraySyntax</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>sun.management.compiler</b></td><td align="left">HotSpot 64-Bit Tiered Compilers</td></tr>
+<tr><td align="left"><b>sun.os.patch.level</b></td><td align="left">unknown</td></tr>
+<tr><td align="left"><b>sun.rmi.dgc.client.gcInterval</b></td><td align="left">3600000</td></tr>
+<tr><td align="left"><b>sun.rmi.dgc.server.gcInterval</b></td><td align="left">3600000</td></tr>
+<tr><td align="left"><b>tomcat.util.buf.StringCache.byte.enabled</b></td><td align="left">true</td></tr>
+<tr><td align="left"><b>user.country</b></td><td align="left">KR</td></tr>
+<tr><td align="left"><b>user.dir</b></td><td align="left">/sw/jboss/jboss-eap-5.2/domains/prod1</td></tr>
+<tr><td align="left"><b>user.home</b></td><td align="left">/home/hsyang</td></tr>
+<tr><td align="left"><b>user.language</b></td><td align="left">ko</td></tr>
+<tr><td align="left"><b>user.name</b></td><td align="left">hsyang</td></tr>
+<tr><td align="left"><b>user.timezone</b></td><td align="left">Asia/Seoul</td></tr>
+<tr><td align="left"><b>xb.builder.useUnorderedSequence</b></td><td align="left">true</td></tr>
+</table>
+ 
+2017.06.22 14:17:26 [DEBUG] ReportUtil: PROPERTIES_FILE=tsmx.properties
+TSMX_VERSION=unknown
+awt.toolkit=sun.awt.X11.XToolkit
+bind.address=hsyang-pc
+catalina.ext.dirs=/sw/jboss/jboss-eap-5.2/domains/prod1/lib
+catalina.home=/sw/jboss/jboss-eap-5.2/domains/prod1
+com.arjuna.ats.arjuna.objectstore.objectStoreDir=/sw/jboss/jboss-eap-5.2/domains/prod1/data/tx-object-store
+com.arjuna.ats.jta.lastResourceOptimisationInterface=org.jboss.tm.LastResource
+com.arjuna.ats.tsmx.agentimpl=com.arjuna.ats.internal.jbossatx.agent.LocalJBossAgentImpl
+com.arjuna.common.util.logger=log4j_releveler
+com.arjuna.common.util.logging.DebugLevel=0x00000000
+com.arjuna.common.util.logging.FacilityLevel=0xffffffff
+com.arjuna.common.util.logging.VisibilityLevel=0xffffffff
+file.encoding=utf-8
+file.encoding.pkg=sun.io
+file.separator=/
+hornetq.backup1.remoting.netty.batch.port=5475
+hornetq.backup1.remoting.netty.port=5465
+hornetq.backup1.remoting.netty.ssl.port=5466
+hornetq.remoting.netty.batch.port=5455
+hornetq.remoting.netty.port=5445
+hornetq.remoting.netty.ssl.port=5446
+java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment
+java.awt.printerjob=sun.print.PSPrinterJob
+java.class.path=/sw/jboss/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.7.0_79/lib/tools.jar
+java.class.version=51.0
+java.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed
+java.ext.dirs=/usr/java/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext
+java.home=/usr/java/jdk1.7.0_79/jre
+java.io.tmpdir=/tmp
+java.library.path=:/sw/jboss/jboss-eap-5.2/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+java.naming.factory.initial=org.jboss.iiop.naming.ORBInitialContextFactory
+java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces
+java.net.preferIPv4Stack=true
+java.protocol.handler.pkgs=org.jboss.net.protocol|org.jboss.virtual.protocol
+java.rmi.server.RMIClassLoaderSpi=org.jboss.system.JBossRMIClassLoader
+java.rmi.server.codebase=http://hsyang-pc:8083/
+java.rmi.server.hostname=hsyang-pc
+java.runtime.name=Java(TM) SE Runtime Environment
+java.runtime.version=1.7.0_79-b15
+java.specification.name=Java Platform API Specification
+java.specification.vendor=Oracle Corporation
+java.specification.version=1.7
+java.util.logging.manager=org.jboss.logmanager.LogManager
+java.vendor=Oracle Corporation
+java.vendor.url=http://java.oracle.com/
+java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+java.version=1.7.0_79
+java.vm.info=mixed mode
+java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+java.vm.specification.name=Java Virtual Machine Specification
+java.vm.specification.vendor=Oracle Corporation
+java.vm.specification.version=1.7
+java.vm.vendor=Oracle Corporation
+java.vm.version=24.79-b02
+javax.management.builder.initial=org.jboss.mx.server.MBeanServerBuilderImpl
+jboss.bind.address=0.0.0.0
+jboss.common.base.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/common/
+jboss.common.lib.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/common/lib/
+jboss.home.dir=/sw/jboss/jboss-eap-5.2/jboss-as
+jboss.home.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/
+jboss.jgroups.diagnostics_addr=224.0.75.75
+jboss.jgroups.diagnostics_port=7500
+jboss.jgroups.jbm_control.fd_sock_port=53200
+jboss.jgroups.jbm_data.fd_sock_port=57900
+jboss.jgroups.jbm_data.mping_mcast_addr=228.2.2.9
+jboss.jgroups.tcp.fd_sock_port=57600
+jboss.jgroups.tcp.mping_mcast_addr=228.2.2.9
+jboss.jgroups.tcp.tcp_port=7600
+jboss.jgroups.tcp_sync.fd_sock_port=57650
+jboss.jgroups.tcp_sync.mping_mcast_addr=228.2.2.9
+jboss.jgroups.tcp_sync.mping_mcast_port=45701
+jboss.jgroups.tcp_sync.tcp_port=7650
+jboss.jgroups.udp.bind_port=55200
+jboss.jgroups.udp.fd_sock_port=54200
+jboss.jgroups.udp.mcast_addr=228.11.11.11
+jboss.jgroups.udp.mcast_port=44559
+jboss.jgroups.udp_async.bind_port=55225
+jboss.jgroups.udp_async.fd_sock_port=54225
+jboss.jgroups.udp_async.mcast_addr=228.11.11.11
+jboss.jgroups.udp_async.mcast_port=45689
+jboss.jgroups.udp_sync.bind_port=55250
+jboss.jgroups.udp_sync.fd_sock_port=54250
+jboss.jgroups.udp_sync.mcast_addr=229.11.11.11
+jboss.jgroups.udp_sync.mcast_port=45699
+jboss.jvmRoute=prod1
+jboss.lib.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/lib/
+jboss.messaging.ServerPeerID=1
+jboss.messaging.connector.bisocket.port=4457
+jboss.messaging.datachanneltcpport=7900
+jboss.messaging.datachanneludpport=45710
+jboss.partition.name=mygroup1
+jboss.partition.udpGroup=228.2.2.9
+jboss.remoting.version=22
+jboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains
+jboss.server.base.url=file:/sw/jboss/jboss-eap-5.2/domains/
+jboss.server.config.url=file:/sw/jboss/jboss-eap-5.2/domains/prod1/conf/
+jboss.server.data.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/data
+jboss.server.home.dir=/sw/jboss/jboss-eap-5.2/domains/prod1
+jboss.server.home.url=file:/sw/jboss/jboss-eap-5.2/domains/prod1/
+jboss.server.lib.url=file:/sw/jboss/jboss-eap-5.2/domains/prod1/lib/
+jboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/log
+jboss.server.log.threshold=INFO
+jboss.server.name=prod1
+jboss.server.temp.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/tmp
+jboss.service.binding.set=ports-default
+jboss.vfs.forceCopy=true
+jbossmx.loader.repository.class=org.jboss.mx.loading.UnifiedLoaderRepository3
+jgroups.bind_addr=hsyang-pc
+jgroups.tcp.mping_mcast_port=45700
+line.separator=
+org.apache.catalina.STRICT_SERVLET_COMPLIANCE=true
+org.apache.catalina.connector.Request.SESSION_ID_CHECK=true
+org.apache.catalina.core.StandardHost.autoDeploy=false
+org.apache.catalina.core.StandardHost.configClass=org.jboss.web.tomcat.service.deployers.JBossContextConfig
+org.apache.catalina.core.StandardHost.deployOnStartup=false
+org.apache.catalina.core.StandardHost.deployXML=false
+org.apache.catalina.core.StandardHost.startChildren=false
+org.apache.catalina.core.StandardService.DELAY_CONNECTOR_STARTUP=true
+org.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger
+org.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true
+org.jboss.ORBSingletonDelegate=org.jacorb.orb.ORBSingleton
+org.jboss.resolver.warning=true
+org.omg.CORBA.ORBClass=org.jacorb.orb.ORB
+org.omg.CORBA.ORBSingletonClass=org.jboss.system.ORBSingleton
+os.arch=amd64
+os.name=Linux
+os.version=3.19.0-30-generic
+path.separator=:
+program.name=run.sh
+server=prod1
+sun.arch.data.model=64
+sun.boot.class.path=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/resolver.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jbossws-native-factories.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxb-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xalan.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/serializer.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxws-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xercesImpl.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/activation.jar:/usr/java/jdk1.7.0_79/jre/lib/resources.jar:/usr/java/jdk1.7.0_79/jre/lib/rt.jar:/usr/java/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/java/jdk1.7.0_79/jre/lib/jsse.jar:/usr/java/jdk1.7.0_79/jre/lib/jce.jar:/usr/java/jdk1.7.0_79/jre/lib/charsets.jar:/usr/java/jdk1.7.0_79/jre/lib/jfr.jar:/usr/java/jdk1.7.0_79/jre/classes
+sun.boot.library.path=/usr/java/jdk1.7.0_79/jre/lib/amd64
+sun.cpu.endian=little
+sun.cpu.isalist=
+sun.desktop=gnome
+sun.font.fontmanager=sun.awt.X11FontManager
+sun.io.unicode.encoding=UnicodeLittle
+sun.java.command=org.jboss.Main -c prod1 -b 0.0.0.0
+sun.java.launcher=SUN_STANDARD
+sun.jnu.encoding=UTF-8
+sun.lang.ClassLoader.allowArraySyntax=true
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+sun.os.patch.level=unknown
+sun.rmi.dgc.client.gcInterval=3600000
+sun.rmi.dgc.server.gcInterval=3600000
+tomcat.util.buf.StringCache.byte.enabled=true
+user.country=KR
+user.dir=/sw/jboss/jboss-eap-5.2/domains/prod1
+user.home=/home/hsyang
+user.language=ko
+user.name=hsyang
+user.timezone=Asia/Seoul
+xb.builder.useUnorderedSequence=true
+ 
+2017.06.22 14:17:26 [DEBUG] ReportUtil: SystemProperties:{java.vm.version=24.79-b02, jboss.jgroups.tcp.mping_mcast_addr=228.2.2.9, jboss.server.base.url=file:/sw/jboss/jboss-eap-5.2/domains/, java.vendor.url=http://java.oracle.com/, hornetq.remoting.netty.ssl.port=5446, jboss.jgroups.udp_sync.bind_port=55250, com.arjuna.ats.tsmx.agentimpl=com.arjuna.ats.internal.jbossatx.agent.LocalJBossAgentImpl, hornetq.backup1.remoting.netty.ssl.port=5466, jboss.jgroups.udp.fd_sock_port=54200, org.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER=true, org.apache.catalina.core.StandardHost.startChildren=false, jboss.jgroups.tcp_sync.mping_mcast_addr=228.2.2.9, hornetq.remoting.netty.port=5445, jboss.jgroups.udp.bind_port=55200, jboss.common.lib.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/common/lib/, java.awt.printerjob=sun.print.PSPrinterJob, jbossmx.loader.repository.class=org.jboss.mx.loading.UnifiedLoaderRepository3, com.arjuna.common.util.logger=log4j_releveler, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, PROPERTIES_FILE=tsmx.properties, line.separator=, jboss.jgroups.diagnostics_addr=224.0.75.75, jboss.jgroups.tcp.tcp_port=7600, sun.rmi.dgc.client.gcInterval=3600000, jboss.server.log.threshold=INFO, jboss.jgroups.udp_sync.mcast_addr=229.11.11.11, jboss.service.binding.set=ports-default, java.vm.vendor=Oracle Corporation, jboss.messaging.datachanneludpport=45710, java.class.path=/sw/jboss/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.7.0_79/lib/tools.jar, user.name=hsyang, os.arch=amd64, java.protocol.handler.pkgs=org.jboss.net.protocol|org.jboss.virtual.protocol, sun.boot.class.path=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/resolver.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jbossws-native-factories.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxb-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xalan.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/serializer.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxws-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xercesImpl.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/activation.jar:/usr/java/jdk1.7.0_79/jre/lib/resources.jar:/usr/java/jdk1.7.0_79/jre/lib/rt.jar:/usr/java/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/java/jdk1.7.0_79/jre/lib/jsse.jar:/usr/java/jdk1.7.0_79/jre/lib/jce.jar:/usr/java/jdk1.7.0_79/jre/lib/charsets.jar:/usr/java/jdk1.7.0_79/jre/lib/jfr.jar:/usr/java/jdk1.7.0_79/jre/classes, sun.font.fontmanager=sun.awt.X11FontManager, sun.desktop=gnome, jboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/log, jboss.jgroups.udp_async.bind_port=55225, sun.cpu.endian=little, awt.toolkit=sun.awt.X11.XToolkit, javax.management.builder.initial=org.jboss.mx.server.MBeanServerBuilderImpl, jboss.vfs.forceCopy=true, java.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed, hornetq.backup1.remoting.netty.batch.port=5475, java.net.preferIPv4Stack=true, org.apache.catalina.core.StandardService.DELAY_CONNECTOR_STARTUP=true, jboss.jgroups.udp_async.mcast_port=45689, org.apache.catalina.core.StandardHost.configClass=org.jboss.web.tomcat.service.deployers.JBossContextConfig, sun.lang.ClassLoader.allowArraySyntax=true, org.apache.commons.logging.Log=org.apache.commons.logging.impl.Log4JLogger, jboss.partition.udpGroup=228.2.2.9, com.arjuna.ats.arjuna.objectstore.objectStoreDir=/sw/jboss/jboss-eap-5.2/domains/prod1/data/tx-object-store, com.arjuna.ats.jta.lastResourceOptimisationInterface=org.jboss.tm.LastResource, jboss.server.home.dir=/sw/jboss/jboss-eap-5.2/domains/prod1, jboss.jgroups.udp_async.mcast_addr=228.11.11.11, jgroups.bind_addr=hsyang-pc, java.specification.vendor=Oracle Corporation, jboss.jgroups.udp_sync.mcast_port=45699, hornetq.backup1.remoting.netty.port=5465, user.timezone=Asia/Seoul, os.name=Linux, jboss.home.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/, hornetq.remoting.netty.batch.port=5455, jboss.partition.name=mygroup1, java.ext.dirs=/usr/java/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext, sun.arch.data.model=64, os.version=3.19.0-30-generic, java.specification.name=Java Platform API Specification, java.vendor=Oracle Corporation, java.rmi.server.hostname=hsyang-pc, jboss.jgroups.udp_async.fd_sock_port=54225, java.naming.factory.url.pkgs=org.jboss.naming:org.jnp.interfaces, jboss.jgroups.diagnostics_port=7500, jboss.jvmRoute=prod1, sun.jnu.encoding=UTF-8, java.vm.info=mixed mode, jboss.server.name=prod1, jboss.common.base.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/common/, user.dir=/sw/jboss/jboss-eap-5.2/domains/prod1, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, sun.os.patch.level=unknown, org.omg.CORBA.ORBSingletonClass=org.jboss.system.ORBSingleton, jboss.jgroups.jbm_data.fd_sock_port=57900, user.home=/home/hsyang, java.io.tmpdir=/tmp, jboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains, java.rmi.server.codebase=http://hsyang-pc:8083/, java.version=1.7.0_79, org.apache.catalina.core.StandardHost.deployXML=false, file.encoding.pkg=sun.io, jboss.messaging.ServerPeerID=1, file.encoding=utf-8, sun.java.command=org.jboss.Main -c prod1 -b 0.0.0.0, jboss.bind.address=0.0.0.0, jboss.messaging.connector.bisocket.port=4457, org.omg.CORBA.ORBClass=org.jacorb.orb.ORB, com.arjuna.common.util.logging.VisibilityLevel=0xffffffff, java.vm.specification.vendor=Oracle Corporation, jboss.jgroups.udp.mcast_addr=228.11.11.11, jgroups.tcp.mping_mcast_port=45700, java.util.logging.manager=org.jboss.logmanager.LogManager, com.arjuna.common.util.logging.DebugLevel=0x00000000, tomcat.util.buf.StringCache.byte.enabled=true, catalina.home=/sw/jboss/jboss-eap-5.2/domains/prod1, org.apache.catalina.STRICT_SERVLET_COMPLIANCE=true, bind.address=hsyang-pc, sun.io.unicode.encoding=UnicodeLittle, jboss.jgroups.jbm_control.fd_sock_port=53200, jboss.jgroups.udp_sync.fd_sock_port=54250, user.language=ko, TSMX_VERSION=unknown, java.runtime.version=1.7.0_79-b15, jboss.jgroups.tcp_sync.fd_sock_port=57650, catalina.ext.dirs=/sw/jboss/jboss-eap-5.2/domains/prod1/lib, jboss.jgroups.jbm_data.mping_mcast_addr=228.2.2.9, java.rmi.server.RMIClassLoaderSpi=org.jboss.system.JBossRMIClassLoader, org.apache.catalina.connector.Request.SESSION_ID_CHECK=true, jboss.messaging.datachanneltcpport=7900, sun.boot.library.path=/usr/java/jdk1.7.0_79/jre/lib/amd64, sun.rmi.dgc.server.gcInterval=3600000, jboss.server.data.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/data, java.home=/usr/java/jdk1.7.0_79/jre, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, jboss.jgroups.tcp_sync.mping_mcast_port=45701, jboss.server.lib.url=file:/sw/jboss/jboss-eap-5.2/domains/prod1/lib/, jboss.jgroups.tcp_sync.tcp_port=7650, jboss.jgroups.tcp.fd_sock_port=57600, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, java.naming.factory.initial=org.jboss.iiop.naming.ORBInitialContextFactory, java.runtime.name=Java(TM) SE Runtime Environment, jboss.lib.url=file:/sw/jboss/jboss-eap-5.2/jboss-as/lib/, org.apache.catalina.core.StandardHost.deployOnStartup=false, java.library.path=:/sw/jboss/jboss-eap-5.2/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib, file.separator=/, xb.builder.useUnorderedSequence=true, jboss.home.dir=/sw/jboss/jboss-eap-5.2/jboss-as, java.vm.specification.version=1.7, org.jboss.resolver.warning=true, jboss.server.home.url=file:/sw/jboss/jboss-eap-5.2/domains/prod1/, sun.java.launcher=SUN_STANDARD, org.jboss.ORBSingletonDelegate=org.jacorb.orb.ORBSingleton, program.name=run.sh, path.separator=:, jboss.jgroups.udp.mcast_port=44559, org.apache.catalina.core.StandardHost.autoDeploy=false, jboss.server.temp.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/tmp, com.arjuna.common.util.logging.FacilityLevel=0xffffffff, jboss.remoting.version=22, jboss.server.config.url=file:/sw/jboss/jboss-eap-5.2/domains/prod1/conf/, user.country=KR, java.class.version=51.0, server=prod1, java.vm.specification.name=Java Virtual Machine Specification, java.specification.version=1.7} 
+2017.06.22 14:17:26 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:26 [INFO ] ReportUtil: Getting Disk Usage... 
+2017.06.22 14:17:26 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:27 [INFO ] JschUtil: command : df -TP /sw/jboss/jboss-eap-5.2/jboss-as | awk '{print $6}' | tail -n 1  
+2017.06.22 14:17:27 [DEBUG] JschUtil: 66%
+ 
+2017.06.22 14:17:27 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:27 [INFO ] ReportUtil: Getting Disk Usage... 
+2017.06.22 14:17:27 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:27 [INFO ] JschUtil: command : df -TP /sw/jboss/jboss-eap-5.2/domains/prod1/log | awk '{print $6}' | tail -n 1  
+2017.06.22 14:17:27 [DEBUG] JschUtil: 66%
+ 
+2017.06.22 14:17:27 [INFO ] ReportUtil: Inspecting Jboss Server Log: server.log.2017-01-?? 
+2017.06.22 14:17:27 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:27 [INFO ] ReportUtil: Getting Server Log Data From Instance... 
+2017.06.22 14:17:27 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:27 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:27 [INFO ] ReportUtil: Checking Server Log Size From Instance... 
+2017.06.22 14:17:27 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:27 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log;du -bc server.log.2017-01-?? | tail -n 1 | awk '{print $1}' 
+2017.06.22 14:17:27 [DEBUG] JschUtil: 22563
+ 
+2017.06.22 14:17:27 [DEBUG] ReportUtil: File Size: 22563 
+2017.06.22 14:17:27 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log;grep "Closing a connection for you" server.log.2017-01-?? | wc -l 
+2017.06.22 14:17:27 [DEBUG] JschUtil: 0
+ 
+2017.06.22 14:17:27 [DEBUG] ReportUtil: 0 
+2017.06.22 14:17:27 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log;grep "Maximum number of threads" server.log.2017-01-?? | wc -l 
+2017.06.22 14:17:28 [DEBUG] JschUtil: 0
+ 
+2017.06.22 14:17:28 [DEBUG] ReportUtil: 0 
+2017.06.22 14:17:28 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log;grep "Too many open files" server.log.2017-01-?? | wc -l 
+2017.06.22 14:17:28 [DEBUG] JschUtil: 0
+ 
+2017.06.22 14:17:28 [DEBUG] ReportUtil: 0 
+2017.06.22 14:17:28 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log;grep "OutOfMemoryError" server.log.2017-01-?? | wc -l 
+2017.06.22 14:17:28 [DEBUG] JschUtil: 0
+ 
+2017.06.22 14:17:28 [DEBUG] ReportUtil: 0 
+2017.06.22 14:17:28 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log;grep "Unable to get managed connection" server.log.2017-01-?? | wc -l 
+2017.06.22 14:17:28 [DEBUG] JschUtil: 0
+ 
+2017.06.22 14:17:28 [DEBUG] ReportUtil: 0 
+2017.06.22 14:17:28 [INFO ] ReportUtil: Inspecting Jboss GC Log: gc.log 
+2017.06.22 14:17:28 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:28 [INFO ] ReportUtil: Getting GC Log Data From Instance... 
+2017.06.22 14:17:28 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:28 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:28 [INFO ] ReportUtil: Checking GC Log Data From Instance... 
+2017.06.22 14:17:28 [INFO ] ReportUtil: ------------------------------------ 
+2017.06.22 14:17:28 [INFO ] JschUtil: command : cd /sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog;du -bc gc.log | tail -n 1 | awk '{print $1}' 
+2017.06.22 14:17:29 [DEBUG] JschUtil: 1968
+ 
+2017.06.22 14:17:29 [INFO ] ReportUtil: CommandLineFlags:{-XX:+UseConcMarkSweepGC=Y, -XX:+PrintGC=Y, -XX:+PrintGCTimeStamps=Y} 
+2017.06.22 14:17:29 [DEBUG] ReportUtil: GCLogMap: com.rp.docs.eap5.collecting_data.GCLogData@14a614b5 
+2017.06.22 14:17:29 [INFO ] ReportUtil: xySeriesCollection.getSeriesCount():3 
+2017.06.22 14:17:30 [INFO ] ReportUtil: xySeriesCollection.getSeriesCount():3 
+2017.06.22 14:17:30 [DEBUG] ReportUtil: {"services":[{"name":"cloud-portal","jboss_hosts":[{"ip":"127.0.0.1","os_user_id":"","os_user_pw":"","os_root_pw":"","java_home":"","jboss_home":"","domain_base":"","instances":[{"instance_name":"prod1","domain_ip":"${ip}","port_offset":"0","jmx_console_port":"1099","jmx_console_id":"","jmx_console_pw":"","result":{"input_arguments":["-Dprogram.name=run.sh","-server","-Dserver=prod1","-Djboss.server.base.dir=/sw/jboss/jboss-eap-5.2/domains","-Djboss.server.base.url=file:///sw/jboss/jboss-eap-5.2/domains","-Djboss.server.log.dir=/sw/jboss/jboss-eap-5.2/domains/prod1/log","-Djboss.service.binding.set=ports-default","-Djboss.server.log.threshold=INFO","-Dfile.encoding=utf-8","-Djboss.jvmRoute=prod1","-Djboss.partition.name=mygroup1","-Djboss.partition.udpGroup=228.2.2.9","-Djboss.jgroups.udp.mcast_port=44559","-Djboss.messaging.ServerPeerID=1","-Xms512m","-Xmx812m","-XX:PermSize=128m","-XX:MaxPermSize=256m","-Xss256k","-verbose:gc","-Xloggc:/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/gc.log","-XX:+PrintGCTimeStamps","-XX:+HeapDumpOnOutOfMemoryError","-XX:HeapDumpPath=/sw/jboss/jboss-eap-5.2/domains/prod1/log/gclog/java_pid.hprof","-XX:+UseConcMarkSweepGC","-Dorg.jboss.resolver.warning=true","-Djava.net.preferIPv4Stack=true","-Dsun.rmi.dgc.client.gcInterval=3600000","-Dsun.rmi.dgc.server.gcInterval=3600000","-Dsun.lang.ClassLoader.allowArraySyntax=true","-Djava.net.preferIPv4Stack=true","-Djava.endorsed.dirs=/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed","-classpath","-c","-b 0.0.0.0"],"jboss_version":{"VersionNumber":"5.2.0.","VersionName":"EAP"},"java_version":{"JavaVersion":"1.7.0_79"},"jboss_directory":{"ServerLogDir":"/sw/jboss/jboss-eap-5.2/domains/prod1/log","ServerHomeDir":"/sw/jboss/jboss-eap-5.2/domains/prod1","HomeDir":"/sw/jboss/jboss-eap-5.2/jboss-as"},"java_heap_size":{"MaxMemory":"823066624","TotalMemory":"647385088","FreeMemory":"286233048"},"java_memory_pools":{"CMSPermGen":{"current_usage":{"max":"268435456","committed":"134217728","init":"134217728","used":"79207648"},"peak_usage":{"max":"268435456","committed":"134217728","init":"134217728","used":"79207648"}},"CMSOldGen":{"current_usage":{"max":"567672832","committed":"391991296","init":"253100032","used":"235193800"},"peak_usage":{"max":"567672832","committed":"391991296","init":"253100032","used":"268220160"}},"ParEdenSpace":{"current_usage":{"max":"227016704","committed":"227016704","init":"227016704","used":"97967768"},"peak_usage":{"max":"227016704","committed":"227016704","init":"227016704","used":"227016704"}},"ParSurvivorSpace":{"current_usage":{"max":"28377088","committed":"28377088","init":"28377088","used":"28377088"},"peak_usage":{"max":"28377088","committed":"28377088","init":"28377088","used":"28377088"}},"CodeCache":{"current_usage":{"max":"50331648","committed":"7340032","init":"2555904","used":"6570816"},"peak_usage":{"max":"50331648","committed":"7340032","init":"2555904","used":"6998400"}}},"datasources":{"DefaultDS":{"MaxConnectionsInUseCount":"1","MaxSize":"20","ConnectionCount":"5","InUseConnectionCount":"0"},"JmsXA":{"MaxConnectionsInUseCount":"0","MaxSize":"20","ConnectionCount":"0","InUseConnectionCount":"0"},"mysqlds":{"MaxConnectionsInUseCount":"0","MaxSize":"30","ConnectionCount":"0","InUseConnectionCount":"0"}},"thread_pools":{"http-0.0.0.0-8080":{"currentThreadsBusy":0,"maxThreads":500,"currentThreadCount":0},"ajp-0.0.0.0-8009":{"currentThreadsBusy":0,"maxThreads":500,"currentThreadCount":0},"http-0.0.0.0-8443":{"currentThreadsBusy":0,"maxThreads":2048,"currentThreadCount":0}},"deployments":[{"jboss.web.deployment:war=/ROOT":"/ROOT"},{"jboss.web.deployment:war=/spis":"/spis"},{"jboss.web.deployment:war=/ibatis":"/ibatis"},{"jboss.web.deployment:war=/web-console":"/web-console"},{"jboss.web.deployment:war=/jbossws":"/jbossws"},{"jboss.web.deployment:war=/simple":"/simple"},{"jboss.web.deployment:war=/admin-console":"/admin-console"},{"jboss.web.deployment:war=/jmx-console":"/jmx-console"},{"jboss.web.deployment:war=/spring-ibatis":"/spring-ibatis"},{"jboss.web.deployment:war=/TomcatServletExamples":"/TomcatServletExamples"},{"jboss.web.deployment:war=/invoker":"/invoker"},{"jboss.web.deployment:war=/juddi":"/juddi"}],"system_properties":{"java.vm.version":"24.79-b02","jboss.jgroups.tcp.mping_mcast_addr":"228.2.2.9","jboss.server.base.url":"file:/sw/jboss/jboss-eap-5.2/domains/","java.vendor.url":"http://java.oracle.com/","hornetq.remoting.netty.ssl.port":"5446","jboss.jgroups.udp_sync.bind_port":"55250","com.arjuna.ats.tsmx.agentimpl":"com.arjuna.ats.internal.jbossatx.agent.LocalJBossAgentImpl","hornetq.backup1.remoting.netty.ssl.port":"5466","jboss.jgroups.udp.fd_sock_port":"54200","org.apache.jasper.runtime.BodyContentImpl.LIMIT_BUFFER":"true","org.apache.catalina.core.StandardHost.startChildren":"false","jboss.jgroups.tcp_sync.mping_mcast_addr":"228.2.2.9","hornetq.remoting.netty.port":"5445","jboss.jgroups.udp.bind_port":"55200","jboss.common.lib.url":"file:/sw/jboss/jboss-eap-5.2/jboss-as/common/lib/","java.awt.printerjob":"sun.print.PSPrinterJob","jbossmx.loader.repository.class":"org.jboss.mx.loading.UnifiedLoaderRepository3","com.arjuna.common.util.logger":"log4j_releveler","java.vendor.url.bug":"http://bugreport.sun.com/bugreport/","PROPERTIES_FILE":"tsmx.properties","line.separator":"","jboss.jgroups.diagnostics_addr":"224.0.75.75","jboss.jgroups.tcp.tcp_port":"7600","sun.rmi.dgc.client.gcInterval":"3600000","jboss.server.log.threshold":"INFO","jboss.jgroups.udp_sync.mcast_addr":"229.11.11.11","jboss.service.binding.set":"ports-default","java.vm.vendor":"Oracle Corporation","jboss.messaging.datachanneludpport":"45710","java.class.path":"/sw/jboss/jboss-eap-5.2/jboss-as/bin/run.jar:/usr/java/jdk1.7.0_79/lib/tools.jar","user.name":"hsyang","os.arch":"amd64","java.protocol.handler.pkgs":"org.jboss.net.protocol|org.jboss.virtual.protocol","sun.boot.class.path":"/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/resolver.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jbossws-native-factories.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxb-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xalan.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/serializer.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/jaxws-api.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/xercesImpl.jar:/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed/activation.jar:/usr/java/jdk1.7.0_79/jre/lib/resources.jar:/usr/java/jdk1.7.0_79/jre/lib/rt.jar:/usr/java/jdk1.7.0_79/jre/lib/sunrsasign.jar:/usr/java/jdk1.7.0_79/jre/lib/jsse.jar:/usr/java/jdk1.7.0_79/jre/lib/jce.jar:/usr/java/jdk1.7.0_79/jre/lib/charsets.jar:/usr/java/jdk1.7.0_79/jre/lib/jfr.jar:/usr/java/jdk1.7.0_79/jre/classes","sun.font.fontmanager":"sun.awt.X11FontManager","sun.desktop":"gnome","jboss.server.log.dir":"/sw/jboss/jboss-eap-5.2/domains/prod1/log","jboss.jgroups.udp_async.bind_port":"55225","sun.cpu.endian":"little","awt.toolkit":"sun.awt.X11.XToolkit","javax.management.builder.initial":"org.jboss.mx.server.MBeanServerBuilderImpl","jboss.vfs.forceCopy":"true","java.endorsed.dirs":"/sw/jboss/jboss-eap-5.2/jboss-as/lib/endorsed","hornetq.backup1.remoting.netty.batch.port":"5475","java.net.preferIPv4Stack":"true","org.apache.catalina.core.StandardService.DELAY_CONNECTOR_STARTUP":"true","jboss.jgroups.udp_async.mcast_port":"45689","org.apache.catalina.core.StandardHost.configClass":"org.jboss.web.tomcat.service.deployers.JBossContextConfig","sun.lang.ClassLoader.allowArraySyntax":"true","org.apache.commons.logging.Log":"org.apache.commons.logging.impl.Log4JLogger","jboss.partition.udpGroup":"228.2.2.9","com.arjuna.ats.arjuna.objectstore.objectStoreDir":"/sw/jboss/jboss-eap-5.2/domains/prod1/data/tx-object-store","com.arjuna.ats.jta.lastResourceOptimisationInterface":"org.jboss.tm.LastResource","jboss.server.home.dir":"/sw/jboss/jboss-eap-5.2/domains/prod1","jboss.jgroups.udp_async.mcast_addr":"228.11.11.11","jgroups.bind_addr":"hsyang-pc","java.specification.vendor":"Oracle Corporation","jboss.jgroups.udp_sync.mcast_port":"45699","hornetq.backup1.remoting.netty.port":"5465","user.timezone":"Asia/Seoul","os.name":"Linux","jboss.home.url":"file:/sw/jboss/jboss-eap-5.2/jboss-as/","hornetq.remoting.netty.batch.port":"5455","jboss.partition.name":"mygroup1","java.ext.dirs":"/usr/java/jdk1.7.0_79/jre/lib/ext:/usr/java/packages/lib/ext","sun.arch.data.model":"64","os.version":"3.19.0-30-generic","java.specification.name":"Java Platform API Specification","java.vendor":"Oracle Corporation","java.rmi.server.hostname":"hsyang-pc","jboss.jgroups.udp_async.fd_sock_port":"54225","java.naming.factory.url.pkgs":"org.jboss.naming:org.jnp.interfaces","jboss.jgroups.diagnostics_port":"7500","jboss.jvmRoute":"prod1","sun.jnu.encoding":"UTF-8","java.vm.info":"mixed mode","jboss.server.name":"prod1","jboss.common.base.url":"file:/sw/jboss/jboss-eap-5.2/jboss-as/common/","user.dir":"/sw/jboss/jboss-eap-5.2/domains/prod1","java.awt.graphicsenv":"sun.awt.X11GraphicsEnvironment","sun.os.patch.level":"unknown","org.omg.CORBA.ORBSingletonClass":"org.jboss.system.ORBSingleton","jboss.jgroups.jbm_data.fd_sock_port":"57900","user.home":"/home/hsyang","java.io.tmpdir":"/tmp","jboss.server.base.dir":"/sw/jboss/jboss-eap-5.2/domains","java.rmi.server.codebase":"http://hsyang-pc:8083/","java.version":"1.7.0_79","org.apache.catalina.core.StandardHost.deployXML":"false","file.encoding.pkg":"sun.io","jboss.messaging.ServerPeerID":"1","file.encoding":"utf-8","sun.java.command":"org.jboss.Main -c prod1 -b 0.0.0.0","jboss.bind.address":"0.0.0.0","jboss.messaging.connector.bisocket.port":"4457","org.omg.CORBA.ORBClass":"org.jacorb.orb.ORB","com.arjuna.common.util.logging.VisibilityLevel":"0xffffffff","java.vm.specification.vendor":"Oracle Corporation","jboss.jgroups.udp.mcast_addr":"228.11.11.11","jgroups.tcp.mping_mcast_port":"45700","java.util.logging.manager":"org.jboss.logmanager.LogManager","com.arjuna.common.util.logging.DebugLevel":"0x00000000","tomcat.util.buf.StringCache.byte.enabled":"true","catalina.home":"/sw/jboss/jboss-eap-5.2/domains/prod1","org.apache.catalina.STRICT_SERVLET_COMPLIANCE":"true","bind.address":"hsyang-pc","sun.io.unicode.encoding":"UnicodeLittle","jboss.jgroups.jbm_control.fd_sock_port":"53200","jboss.jgroups.udp_sync.fd_sock_port":"54250","user.language":"ko","TSMX_VERSION":"unknown","java.runtime.version":"1.7.0_79-b15","jboss.jgroups.tcp_sync.fd_sock_port":"57650","catalina.ext.dirs":"/sw/jboss/jboss-eap-5.2/domains/prod1/lib","jboss.jgroups.jbm_data.mping_mcast_addr":"228.2.2.9","java.rmi.server.RMIClassLoaderSpi":"org.jboss.system.JBossRMIClassLoader","org.apache.catalina.connector.Request.SESSION_ID_CHECK":"true","jboss.messaging.datachanneltcpport":"7900","sun.boot.library.path":"/usr/java/jdk1.7.0_79/jre/lib/amd64","sun.rmi.dgc.server.gcInterval":"3600000","jboss.server.data.dir":"/sw/jboss/jboss-eap-5.2/domains/prod1/data","java.home":"/usr/java/jdk1.7.0_79/jre","java.vm.name":"Java HotSpot(TM) 64-Bit Server VM","jboss.jgroups.tcp_sync.mping_mcast_port":"45701","jboss.server.lib.url":"file:/sw/jboss/jboss-eap-5.2/domains/prod1/lib/","jboss.jgroups.tcp_sync.tcp_port":"7650","jboss.jgroups.tcp.fd_sock_port":"57600","sun.management.compiler":"HotSpot 64-Bit Tiered Compilers","java.naming.factory.initial":"org.jboss.iiop.naming.ORBInitialContextFactory","java.runtime.name":"Java(TM) SE Runtime Environment","jboss.lib.url":"file:/sw/jboss/jboss-eap-5.2/jboss-as/lib/","org.apache.catalina.core.StandardHost.deployOnStartup":"false","java.library.path":":/sw/jboss/jboss-eap-5.2/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib","file.separator":"/","xb.builder.useUnorderedSequence":"true","jboss.home.dir":"/sw/jboss/jboss-eap-5.2/jboss-as","java.vm.specification.version":"1.7","org.jboss.resolver.warning":"true","jboss.server.home.url":"file:/sw/jboss/jboss-eap-5.2/domains/prod1/","sun.java.launcher":"SUN_STANDARD","org.jboss.ORBSingletonDelegate":"org.jacorb.orb.ORBSingleton","program.name":"run.sh","path.separator":":","jboss.jgroups.udp.mcast_port":"44559","org.apache.catalina.core.StandardHost.autoDeploy":"false","jboss.server.temp.dir":"/sw/jboss/jboss-eap-5.2/domains/prod1/tmp","com.arjuna.common.util.logging.FacilityLevel":"0xffffffff","jboss.remoting.version":"22","jboss.server.config.url":"file:/sw/jboss/jboss-eap-5.2/domains/prod1/conf/","user.country":"KR","java.class.version":"51.0","server":"prod1","java.vm.specification.name":"Java Virtual Machine Specification","java.specification.version":"1.7"},"disk_usage":{"log_disk_usage":"66%","engine_disk_usage":"66%"},"server_log_file_inspection":{"Closing a connection for you":"0","Maximum number of threads":"0","Too many open files":"0","OutOfMemoryError":"0","Unable to get managed connection":"0"},"gc_log_file_inspection":{"MaxGcDuration":"0.219348","FullGcAvgInterval":"8.078"}}}],"hostname":"hsyang-pc","operating_system":"Linux x86_64"}]}],"sales":{"name":"김연수 상무","tel_no":"010-3388-0881","email":"sales@rockplace.co.kr"},"host_default_values":{"os_user_id":"hsyang","os_user_pw":"gmltjs","os_root_pw":"gmltjs","java_home":"/usr/java/jdk1.7.0_79","jboss_home":"/sw/jboss/jboss-eap-5.2","domain_base":"/sw/jboss/jboss-eap-5.2/domains"},"engineer":{"name":"정원식","tel_no":"010-3713-5346","email":"midware@rockplace.co.kr"},"instance_default_values":{"log_home":"","domain_ip":"","port_offset":"0","jmx_console_port":"1099","jmx_console_id":"admin","jmx_console_pw":"rplinux"},"customer":{"name":"KT Cloud","inspection_place":"KT본사"}} 
+2017.06.22 14:17:30 [INFO ] ReportUtil: ==================================== 
+2017.06.22 14:17:30 [INFO ] ReportUtil: Collecting Data from Target Hosts is Completed 
+2017.06.22 14:17:30 [INFO ] ReportUtil: ==================================== 
